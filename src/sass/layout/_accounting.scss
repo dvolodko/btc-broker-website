@@ -1,0 +1,117 @@
+.accounting-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 64px) calc(50% - 196px),
+		calc(50% - 256px) calc(50% - 128px), calc(50% - 384px) calc(75% + 416px),
+		calc(50% - 64px) calc(75% + 256px);
+	background-size: auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 256px) calc(50% - 128px),
+			calc(50% - 384px) calc(50% - 128px), calc(50% - 480px) calc(50% + 320px),
+			calc(50% + 128px) calc(50% + 320px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 480px) calc(50% - 224px),
+			calc(50% - 512px) calc(50% - 64px), calc(50% - 736px) calc(50% + 384px),
+			calc(50% + 0px) calc(50% + 320px);
+	}
+}
+
+.accounting-container {
+	padding-top: $L;
+	padding-bottom: $XXL;
+}
+
+.accounting-subheader {
+	margin-bottom: $L;
+}
+
+.tabs-content-wrapper {
+	@include flex(flex, space-between, flex-start);
+}
+
+.tabs-list {
+	@include flex(flex, flex-start, center);
+	gap: $XS;
+	margin-bottom: $L;
+}
+
+.tabs-button {
+	cursor: pointer;
+	display: block;
+	text-align: center;
+	font-weight: 700;
+	padding: $M $M;
+	color: $primaryColor950;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationLow;
+	border: none;
+	border-radius: $S;
+	transition: color $mainTransitionDuration $mainTransitionTimingFunction,
+		background-color $mainTransitionDuration $mainTransitionTimingFunction,
+		box-shadow $mainTransitionDuration $mainTransitionTimingFunction,
+		transform $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.tabs-button.active {
+	color: $neutralColor0;
+	background-color: $primaryColor700;
+	box-shadow: $shadowElevationMedium;
+	transform: scale(1.1);
+}
+
+.accounting-pdf-files-list {
+	@include flex(flex, center, flex-start);
+	gap: $S;
+	flex-direction: column;
+	overflow: hidden;
+	font-family: $secondaryFontFamily;
+	font-weight: 600;
+	height: 0;
+	opacity: 0;
+	transform-origin: top left;
+	transform: translateX(-8px);
+	transition: opacity $doubleTransitionDuration $mainTransitionTimingFunction,
+		transform $doubleTransitionDuration $mainTransitionTimingFunction;
+	&.visible {
+		transform: translateX(0);
+		height: auto;
+		opacity: 1;
+	}
+}
+
+.accounting-pdf-files-item {
+	@include flex(flex, center, center);
+	gap: $S;
+}
+
+.accounting-pdf-files-icon {
+	display: block;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}
+
+.accounting-section-illustration {
+	display: none;
+	@include mq(tablet-S) {
+		display: block;
+		margin-top: 128px;
+		max-width: 352px;
+	}
+	@include mq(tablet-L) {
+		max-width: 384px;
+		margin-right: 64px;
+	}
+	@include mq(desktop) {
+		margin-right: 128px;
+	}
+}

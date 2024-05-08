@@ -1,0 +1,91 @@
+.hero-section {
+	background-image: url("/src/images/handsome-businessman.webp"),
+		url("/src/images/shares-graph.svg"),
+		url("/src/images/svg/bg-ellipse-yellow-hero-390.svg"),
+		url("/src/images/svg/bg-ellipse-blue-hero-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 112px) calc(50% + 66px),
+		calc(50% + 16px) calc(50% + 208px), calc(50% + 16px) calc(50% + 204px),
+		calc(50% + 160px) calc(50% + 36px);
+	background-size: 320px, 480px, auto, 640px;
+	padding-top: 88px;
+	padding-bottom: 224px;
+	margin-bottom: -224px;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/handsome-businessman.webp"),
+			url("/src/images/shares-graph.svg"),
+			url("/src/images/svg/bg-shape-yellow-hero-768.svg"),
+			url("/src/images/svg/bg-ellipse-blue-hero-768.svg");
+		background-position: calc(50% + 224px) calc(50% - 44px),
+			calc(50% + 230px) calc(50% + 0px), calc(50% + 56px) calc(50% + 88px),
+			calc(50% + 256px) calc(50% + 0px);
+		background-size: 400px, 480px, 634px, 560px;
+	}
+	@include mq(tablet-L) {
+		background-image: url("/src/images/handsome-businessman-blured.webp"),
+			url("/src/images/tesla-graph-cloud.webp"),
+			url("/src/images/shares-graph.svg"),
+			url("/src/images/svg/bg-shape-yellow-hero-768.svg"),
+			url("/src/images/svg/bg-ellipse-blue-hero-desktop.svg");
+		background-position: calc(50% + 256px) calc(50% - 96px),
+			calc(50% + 448px) calc(50% - 320px), calc(50% + 288px) calc(50% - 196px),
+			calc(50% - 160px) calc(50% + 80px), calc(50% + 256px) calc(50% - 16px);
+		background-size: 480px, 160px, 576px, 928px, 776px;
+		padding-bottom: 320px;
+		margin-bottom: -320px;
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 256px) calc(50% - 64px),
+			calc(50% + 480px) calc(50% - 336px), calc(50% + 344px) calc(50% - 196px),
+			calc(50% - 64px) calc(50% + 160px), calc(50% + 128px) calc(50% + 192px);
+		background-size: 576px, 212px, 768px, 928px, 1920px;
+		padding-bottom: 320px;
+		margin-bottom: -320px;
+	}
+}
+
+.hero-container {
+	@include flex(flex, flex-start, center);
+	@include mq(tablet-S) {
+		padding-top: $L;
+		padding-bottom: $L;
+	}
+	@include mq(tablet-L) {
+		padding-top: $XL;
+		padding-bottom: $XL;
+	}
+	@include mq(desktop) {
+		padding-top: 136px;
+		padding-bottom: 128px;
+	}
+}
+
+.call-to-action-wrapper {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	gap: $M;
+	padding-bottom: 116px;
+	@include mq(tablet-S) {
+		flex-basis: calc((100% - 1 * $M) / 2);
+		padding-bottom: 0;
+	}
+}
+
+.hero-title {
+	font-family: $secondaryFontFamily;
+	color: $primaryColor950;
+	text-wrap: balance;
+	@include font(800, 3.75rem, 4.25rem, -0.1rem);
+	@include mq(tablet-L) {
+		@include font(800, 5rem, 5.5rem, -0.1rem);
+	}
+}
+
+.hero-text {
+	max-width: 15rem;
+	text-wrap: balance;
+	margin-bottom: 20px;
+	@include mq(tablet-S) {
+		max-width: 100%;
+	}
+}

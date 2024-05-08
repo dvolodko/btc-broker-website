@@ -1,0 +1,104 @@
+// 0 to height: auto animation
+
+.accordion-content {
+	display: grid;
+	grid-template-rows: 0fr;
+	padding-left: $L;
+	@include mq(tablet-S) {
+		transition: grid-template-rows $mainTransitionDuration
+			$mainTransitionTimingFunction;
+	}
+}
+
+.accordion-content[aria-hidden="false"] {
+	grid-template-rows: 1fr;
+}
+
+.accordion-content > div {
+	overflow: hidden;
+}
+
+// styling
+
+.accordion {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	gap: $M;
+}
+
+.accordion-panel {
+	padding: 16px $M;
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	& h3 {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.accordion h3 {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $neutralColor950;
+}
+
+.accordion-trigger {
+	@include flex(flex, center, baseline);
+	background: transparent;
+	border: 0;
+	font: inherit;
+	color: inherit;
+	text-align: left;
+	padding: 0;
+	cursor: inherit;
+}
+
+.accordion-icon-wrapper {
+	@include flex(flex, center, center);
+	width: 24px;
+	height: 24px;
+	margin-right: 14px;
+	border-radius: $S;
+	background-color: transparent;
+	transition: background-color $mainTransitionDuration
+		$mainTransitionTimingFunction;
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-icon-wrapper {
+	background-color: $primaryColor700;
+}
+
+.accordion-icon {
+	display: block;
+	margin: 0 auto;
+}
+
+.accordion-trigger .line {
+	stroke: $primaryColor700;
+	transform-origin: center;
+	rotate: 0deg;
+	transition: rotate $mainTransitionDuration $mainTransitionTimingFunction,
+		stroke $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.accordion-trigger[aria-expanded="true"] .line {
+	transition: rotate $mainTransitionDuration $mainTransitionTimingFunction,
+		stroke $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.accordion-trigger[aria-expanded="true"] .vertical {
+	rotate: 90deg;
+	stroke: $neutralColor0;
+}
+
+.accordion-trigger[aria-expanded="true"] .horizontal {
+	rotate: 180deg;
+	stroke: $neutralColor0;
+}
+
+.accordion-content-text {
+	margin-top: $M;
+	margin-bottom: 4px;
+}

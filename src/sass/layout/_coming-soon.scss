@@ -1,0 +1,52 @@
+.coming-soon-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 64px) calc(50% - 196px),
+		calc(50% - 256px) calc(50% - 128px), calc(50% - 384px) calc(75% + 416px),
+		calc(50% - 64px) calc(75% + 256px);
+	background-size: auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 256px) calc(50% - 128px),
+			calc(50% - 384px) calc(50% - 128px), calc(50% - 480px) calc(50% + 320px),
+			calc(50% + 128px) calc(50% + 320px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 480px) calc(50% - 224px),
+			calc(50% - 512px) calc(50% - 64px), calc(50% - 736px) calc(50% + 384px),
+			calc(50% + 0px) calc(50% + 320px);
+	}
+}
+
+.coming-soon-container {
+	padding-top: $L;
+	padding-bottom: $XXL;
+}
+
+.coming-soon-subheader {
+	margin-bottom: $L;
+}
+
+.coming-soon-content-wrapper {
+	@include flex(flex, space-between, flex-start);
+	flex-direction: column;
+	gap: $S;
+	@include mq(tablet-S) {
+		flex-direction: row;
+	}
+}
+
+.coming-soon-section-illustration {
+	@include mq(tablet-S) {
+		max-width: 512px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

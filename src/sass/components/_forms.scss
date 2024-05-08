@@ -1,0 +1,202 @@
+.form-group {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+}
+
+.form-group:not(:last-child) {
+	padding-bottom: $L;
+	border-bottom: 1px solid $neutralColor300;
+}
+
+.form-group-title {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $neutralColor950;
+	margin-bottom: $M;
+}
+
+.form-label,
+.radio-title {
+	color: $neutralColor950;
+	margin-bottom: 4px;
+}
+
+.form-label-radio {
+	color: $neutralColor950;
+}
+
+.form-label-checkbox {
+	color: $neutralColor950;
+	flex: 2;
+}
+
+.form-label.required::after,
+.radio-title.required::after {
+	content: "*";
+	margin-left: 4px;
+	color: $systemColorError;
+}
+
+.form-input {
+	padding: $S 44px $S 16px;
+	border: 1.4px solid $neutralColor300;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: 16px;
+	outline: none;
+	transition: border-color $mainTransitionDuration $mainTransitionTimingFunction;
+	&:hover {
+		border-color: $neutralColor500;
+		&::placeholder {
+			color: $neutralColor500;
+		}
+	}
+	&:focus {
+		border-color: $primaryColor400;
+		&::placeholder {
+			color: $primaryColor950;
+		}
+	}
+	&.file {
+		width: 100%;
+		margin-bottom: $L;
+	}
+	&.with-margin {
+		margin-bottom: $L;
+	}
+}
+
+.form-input:not(:last-child) {
+	margin-bottom: $L;
+}
+
+.form-input::placeholder {
+	color: $neutralColor300;
+	transition: color $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.form-input:not(:placeholder-shown):required:valid,
+.form-input:not(:placeholder-shown):valid {
+	border-color: $primaryColor400;
+	background-image: url("/src/images/svg/icon-done-check-blue.svg");
+	background-repeat: no-repeat;
+	background-size: 24px;
+	background-position: right 16px center;
+}
+
+.form-input:not(:placeholder-shown):required:invalid,
+.form-input:not(:placeholder-shown):invalid {
+	border-color: $systemColorError;
+	background-image: url("/src/images/svg/icon-warning.svg");
+	background-repeat: no-repeat;
+	background-size: 24px;
+	background-position: right 16px center;
+}
+
+.radio-wrapper {
+	@include flex(flex, flex-start, center);
+	gap: $M;
+	&:not(:last-child) {
+		margin-bottom: 4px;
+	}
+}
+
+.checkbox-wrapper {
+	@include flex(flex, flex-start, center);
+	gap: $M;
+	&:not(:last-child) {
+		margin-bottom: $L;
+	}
+}
+
+.form-input-radio {
+	accent-color: $primaryColor700;
+	width: 24px;
+	height: 24px;
+	&:checked + label {
+		color: $primaryColor700;
+	}
+}
+
+.form-input-checkbox {
+	accent-color: $primaryColor700;
+	width: 24px;
+	height: 24px;
+	&:checked + label {
+		color: $primaryColor700;
+	}
+}
+
+.form-group-radio {
+	margin-bottom: $L;
+	&.last-child {
+		margin-bottom: 0;
+	}
+	&.first-child {
+		margin-top: $L;
+	}
+}
+
+.form-annotation {
+	font-size: 12px;
+	line-height: 1.4;
+	font-style: italic;
+	color: $neutralColor950;
+}
+
+.form-annotation-strong {
+	font-weight: 700;
+}
+
+.checkbox-wrapper.above-hidden {
+	margin-bottom: 0;
+}
+
+.checkbox-wrapper.beyond-hidden {
+	margin-top: $L;
+}
+
+.hidden-inputs-wrapper {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.form-label.hidden {
+	display: block;
+}
+
+.form-label.hidden[for="taxResidenceCountry"] {
+	padding-top: $M;
+}
+
+.form-input.hidden {
+	display: block;
+	width: 100%;
+}
+
+.livingAddressGroup {
+	margin-top: $L;
+}
+
+.VPOFile-wrapper {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	margin-top: $M;
+}
+
+.is-passport-type-other {
+	flex: 1;
+}
+
+.passport-name-wrapper,
+.passport-code-wrapper,
+.passport-date-expired-wrapper {
+	margin-bottom: $L;
+	transition: max-height $mainTransitionDuration $mainTransitionTimingFunction;
+	&.hidden {
+		margin-bottom: 0;
+		overflow: hidden;
+		max-height: 0;
+	}
+}

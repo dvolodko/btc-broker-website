@@ -1,0 +1,51 @@
+.diia-military-bonds-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 0px) calc(50% - 0px),
+		calc(50% + 64px) calc(50% - 256px), calc(50% - 0px) calc(75% + 416px),
+		calc(50% - 256px) calc(75% + 300px);
+	background-size: auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 256px) calc(50% - 128px),
+			calc(50% - 160px) calc(50% - 64px), calc(50% - 512px) calc(50% + 512px),
+			calc(50% + 128px) calc(50% + 512px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 352px) calc(50% - 224px),
+			calc(50% - 256px) calc(50% - 64px), calc(50% - 736px) calc(50% + 512px),
+			calc(50% + 256px) calc(50% + 512px);
+	}
+}
+
+.diia-military-bonds-container {
+	padding-top: $L;
+	padding-bottom: $XXL;
+	@include mq(tablet-S) {
+		padding-left: 76px;
+		padding-right: 76px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+	@include mq(desktop) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+.diia-military-bonds-subheader {
+	margin-bottom: $L;
+}
+
+.diia-military-bonds-paragraph {
+	margin-bottom: $M;
+}

@@ -1,0 +1,280 @@
+.bonds-quote-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 0px) calc(0% - 128px),
+		calc(50% - 128px) calc(25% - 128px), calc(50% - 256px) calc(50% + 800px),
+		calc(50% - 160px) calc(75% - 0px);
+	background-size: auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 128px) calc(0% - 640px),
+			calc(50% - 352px) calc(25% - 320px), calc(50% - 256px) calc(50% + 800px),
+			calc(50% - 160px) calc(75% - 0px);
+	}
+	@include mq(tablet-L) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 128px) calc(0% - 640px),
+			calc(50% - 352px) calc(25% - 320px), calc(50% - 480px) calc(50% + 320px),
+			calc(50% - 160px) calc(75% - 0px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 256px) calc(0% - 640px),
+			calc(50% - 352px) calc(25% - 320px), calc(50% - 480px) calc(50% + 320px),
+			calc(50% - 160px) calc(75% - 0px);
+	}
+	margin-bottom: -512px;
+	padding-bottom: 512px;
+}
+
+.bonds-quote-container {
+	padding-top: $L;
+	padding-bottom: $L;
+	@include mq(tablet-S) {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+}
+
+.bonds-quote-header {
+	margin-bottom: $S;
+}
+
+.bonds-quote-paragraph {
+	margin-bottom: $L;
+}
+
+.bonds-quote-bonds-header-list {
+	display: none;
+	@include mq(tablet-L) {
+		display: grid;
+		// grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: 1.2fr 1.2fr 0.7fr 1fr 0.6fr 0.8fr 0.8fr;
+		margin-bottom: $M;
+		font-weight: 700;
+	}
+}
+
+.bonds-quote-bonds-header-item {
+	@include mq(tablet-L) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.bonds-quote-bonds-list {
+	margin-bottom: $XL;
+	&.low-margin {
+		margin-bottom: $M;
+	}
+}
+
+.bonds-quote-item {
+	display: flex;
+	flex-direction: column;
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	&:not(:last-child) {
+		margin-bottom: $M;
+	}
+	@include mq(tablet-L) {
+		display: grid;
+		// grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: 1.2fr 1.2fr 0.7fr 1fr 0.6fr 0.8fr 0.8fr;
+		&:not(:last-child) {
+			margin-bottom: $S;
+		}
+	}
+}
+
+.bonds-quote-element {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: $XS $S;
+	@include mq(tablet-L) {
+		padding: $M $S;
+	}
+}
+
+.bonds-quote-element:nth-child(even) {
+	background-color: $primaryColor100;
+}
+
+.bonds-quote-element-header {
+	color: $neutralColor950;
+	font-weight: 700;
+	margin-right: auto;
+	@include mq(tablet-L) {
+		display: none;
+	}
+}
+
+.asterix {
+	color: $primaryColor400;
+	font-weight: 700;
+}
+
+.asterix-warning {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.warning-text {
+	margin-bottom: $M;
+	&.high-margin {
+		margin-bottom: $XL;
+	}
+}
+
+.red-warning-text {
+	margin-bottom: $M;
+	color: $systemColorError;
+	font-weight: 700;
+}
+
+.no-quotes-message {
+	padding: $M;
+}
+
+.bonds-quote-group-title {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $neutralColor950;
+	margin-bottom: $M;
+}
+
+.hidden {
+	display: none;
+}
+
+.bonds-bond-ua-section {
+	background-image: url("/src/images/iphone-bonds-bond-ua.webp"),
+		url("/src/images/svg/bg-ellipse-yellow-hero-390.svg"),
+		url("/src/images/svg/bg-ellipse-blue-hero-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 120px) calc(50% + 189px),
+		calc(50% - 64px) calc(50% + 160px), calc(50% + 96px) calc(50% + 160px);
+	background-size: 352px, auto auto, 640px;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/iphone-bonds-bond-ua.webp"),
+			url("/src/images/svg/bg-shape-yellow-hero-768.svg"),
+			url("/src/images/svg/bg-ellipse-blue-hero-768.svg");
+		background-position: calc(50% + 192px) calc(50% + 84px),
+			calc(50% - 256px) calc(50% + 192px), calc(50% + 192px) calc(50% + 50px);
+		background-size: 356px, 634px, 576px;
+		padding-top: 64px;
+		margin-top: -128px;
+	}
+	@include mq(tablet-L) {
+		background-position: calc(50% + 208px) calc(50% + 86px),
+			calc(50% - 288px) calc(50% + 256px), calc(50% + 208px) calc(50% + 50px);
+		background-size: 364px, 640px, 576px;
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 224px) calc(50% + 86px),
+			calc(50% - 352px) calc(50% + 256px), calc(50% + 224px) calc(50% + 50px);
+		background-size: 364px, 640px, 576px;
+	}
+}
+
+.bonds-bond-ua-container {
+	@include flex(flex, flex-start, center);
+	padding-top: $M;
+	padding-bottom: $M;
+	@include mq(tablet-S) {
+		padding-top: $L;
+		padding-bottom: $XL;
+		padding-left: 76px;
+		padding-right: 76px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+	@include mq(desktop) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+.bonds-bond-ua-description-container {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	padding-bottom: 256px;
+	@include mq(tablet-S) {
+		flex-basis: calc((100% - 1 * $M) / 2);
+		padding-bottom: 0;
+	}
+}
+
+.bonds-bond-ua-description-subheader {
+	margin-bottom: $L;
+	text-wrap: balance;
+}
+
+.buttons-app-download {
+	@include flex(flex, center, center);
+	flex-direction: column;
+	gap: $S;
+	@include mq(tablet-S) {
+		flex-direction: row;
+		gap: $M;
+	}
+}
+
+.bonds-bond-ua-app-google-link,
+.bonds-bond-ua-app-apple-link {
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	transition: background-color $mainTransitionDuration
+			$mainTransitionTimingFunction,
+		box-shadow $mainTransitionDuration $mainTransitionTimingFunction;
+	transition: background-color $mainTransitionDuration
+		$mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		background-color: $primaryColor950;
+		box-shadow: $shadowElevationLow;
+	}
+}
+
+.bonds-bond-ua-app-google-link-vector-neutral950 {
+	fill: $primaryColor950;
+	stroke: $neutralColor950;
+	transition: fill $mainTransitionDuration $mainTransitionTimingFunction,
+		stroke $mainTransitionDuration $mainTransitionTimingFunction;
+	.bonds-bond-ua-app-google-link:hover &,
+	.bonds-bond-ua-app-google-link:focus & {
+		fill: $neutralColor0;
+		stroke: $neutralColor0;
+	}
+}
+
+.bonds-bond-ua-app-google-link-vector-primary950,
+.bonds-bond-ua-app-apple-link-primary950 {
+	fill: $primaryColor950;
+	transition: fill $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.bonds-bond-ua-app-google-link:hover
+	.bonds-bond-ua-app-google-link-vector-primary950,
+.bonds-bond-ua-app-apple-link:hover .bonds-bond-ua-app-apple-link-primary950 {
+	fill: $neutralColor0;
+}

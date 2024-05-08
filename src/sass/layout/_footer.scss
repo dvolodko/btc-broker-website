@@ -1,0 +1,226 @@
+.footer {
+	background-color: $primaryColor950;
+}
+
+.footer-container {
+	padding-top: $L;
+	padding-bottom: $L;
+	color: $primaryColor100;
+}
+
+.footer-navigation {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	gap: $L;
+	padding-bottom: $L;
+	border-bottom: 1px solid $primaryColor900;
+	@include mq(tablet-S) {
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+	@include mq(desktop) {
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.address {
+	@include font(400, 0.875rem, 1.5rem, 0);
+	font-style: normal;
+	@include mq(tablet-S) {
+		@include font(400, 1rem, 1.5rem, 0);
+	}
+	@include mq(desktop) {
+		flex-basis: calc(75%);
+	}
+}
+
+.address-list {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	gap: $M;
+	@include mq(tablet-L) {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+.address-item {
+	@include flex(flex, center, center);
+	gap: $M;
+}
+
+.address-item-contacts {
+	flex-grow: 1;
+	justify-content: flex-start;
+}
+
+.address-item-address {
+	flex-grow: 2;
+	justify-content: flex-start;
+}
+
+.footer-address-icon-wrapper {
+	@include flex(flex, center, center);
+	width: 40px;
+	height: 40px;
+}
+
+.contacts-us-wrapper {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+}
+
+.address-link {
+	text-wrap: balance;
+}
+
+.footer-license-and-menu {
+	@include mq(tablet-L) {
+		@include flex(flex, flex-start, flex-start);
+		gap: $M;
+		padding-top: $L;
+		padding-bottom: $L;
+	}
+}
+
+.footer-license {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	gap: $M;
+	padding-top: $L;
+	padding-bottom: $L;
+	@include mq(tablet-S) {
+		flex-direction: row;
+		align-items: center;
+	}
+	@include mq(tablet-L) {
+		flex-direction: column;
+		align-items: flex-start;
+		flex-basis: calc((100% - 1 * $M) / 3);
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.footer-btc-broker-title {
+	text-transform: uppercase;
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	text-wrap: nowrap;
+}
+
+.footer-menu {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	gap: $M;
+	margin-bottom: $L;
+	@include mq(tablet-S) {
+		display: none;
+	}
+}
+
+.footer-menu-trigger {
+	@include flex(flex, flex-start, center);
+	gap: 10px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	background-color: transparent;
+	color: inherit;
+}
+
+.footer-menu-icon {
+	stroke: $primaryColor100;
+	rotate: 0;
+	transition: rotate $mainTransitionDuration $mainTransitionTimingFunction;
+
+	.footer-menu-item.active & {
+		rotate: -180deg;
+	}
+}
+
+.footer-menu-submenu-wrapper {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.footer-menu-submenu-list {
+	margin-top: $M;
+	margin-bottom: $L;
+}
+
+.footer-menu-submenu-item:not(:last-child) {
+	margin-bottom: $XS;
+}
+
+.footer-menu-expanded {
+	display: none;
+	@include mq(tablet-S) {
+		@include flex(flex, center, flex-start);
+		gap: $M;
+		padding-top: $M;
+	}
+	@include mq(tablet-L) {
+		padding-top: 0;
+		width: 100%;
+	}
+}
+
+.footer-menu-item-expanded {
+	@include mq(tablet-S) {
+		flex-basis: calc((100% - 2 * $M) / 3);
+	}
+}
+
+.footer-menu-title-expanded {
+	@include mq(tablet-L) {
+		margin-bottom: $M;
+	}
+}
+
+.footer-menu-submenu-list-expanded {
+	@include mq(tablet-S) {
+		padding-top: $M;
+		padding-bottom: $L;
+	}
+	@include mq(tablet-L) {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.footer-social-list {
+	@include flex(flex, center, center);
+	gap: $M;
+}
+
+.footer-social-icon {
+	fill: $primaryColor100;
+	width: 40px;
+	height: 40px;
+	transition: fill $mainTransitionDuration $mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		fill: $primaryColor400;
+	}
+}
+
+.footer-copyright {
+	background-color: $primaryColor900;
+	padding-top: $M;
+	padding-bottom: $M;
+}
+
+.footer-copyright-item {
+	@include font(400, 0.75rem, 1rem, 0);
+	color: $primaryColor400;
+	text-wrap: balance;
+}
+
+.footer-copyright-item:not(:last-child) {
+	margin-bottom: $M;
+}

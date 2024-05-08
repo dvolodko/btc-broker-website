@@ -1,0 +1,94 @@
+.contact-us-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 0px) calc(50% - 0px),
+		calc(50% + 64px) calc(50% - 256px), calc(50% - 0px) calc(75% + 416px),
+		calc(50% - 256px) calc(75% + 300px);
+	background-size: auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 256px) calc(50% - 128px),
+			calc(50% - 160px) calc(50% - 64px), calc(50% - 512px) calc(50% + 512px),
+			calc(50% + 128px) calc(50% + 512px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 352px) calc(50% - 224px),
+			calc(50% - 256px) calc(50% - 64px), calc(50% - 736px) calc(50% + 512px),
+			calc(50% + 256px) calc(50% + 512px);
+	}
+}
+
+.contact-us-container {
+	padding-top: $L;
+	padding-bottom: $XXL;
+}
+
+.contact-us-address-and-faq-pointer-wrapper {
+	@include mq(tablet-S) {
+		@include flex(flex, center, flex-start);
+		gap: $L;
+	}
+}
+
+.contacts-us-header {
+	margin-bottom: $L;
+}
+
+.contact-us-creds {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+}
+
+.contact-us-subtitle {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $neutralColor950;
+	margin-bottom: $M;
+}
+
+.contacts-us-address {
+	font-style: normal;
+	margin-bottom: $L;
+}
+
+.contacts-us-creds-item:not(:last-child) {
+	margin-bottom: $M;
+}
+
+.contact-us-creds-title {
+	font-family: $secondaryFontFamily;
+	@include font(600, 1rem, 1.5rem, 0);
+	color: $neutralColor950;
+}
+
+.contact-us-faq-pointer {
+	margin-bottom: $L;
+}
+
+.form-contact-us {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	gap: $L;
+	padding: $L $M;
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	@include mq(tablet-L) {
+		flex-basis: calc((100% - 1 * $L) / 1.4);
+	}
+	@include mq(desktop) {
+		flex-basis: calc((100% - 1 * $L) / 1.6);
+	}
+}
+
+.contact-us-textarea {
+	resize: none;
+	min-height: 120px;
+}

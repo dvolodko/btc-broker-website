@@ -1,0 +1,162 @@
+<section class="contact-us-section">
+	<div class="container contact-us-container">
+		<div class="contact-us-address-and-faq-pointer-wrapper">
+			<div class="contact-us-creds">
+				<h3 class="superheader">Ми на зв'язку</h3>
+				<h1 class="section-header contacts-us-header">Точки контакту</h1>
+				<h2 class="contact-us-subtitle">Контакти</h2>
+				<address class="contacts-us-address">
+					<ul class="contacts-us-creds-list">
+						<li class="contacts-us-creds-item">
+							<p class="contact-us-creds-title">Адреса:</p>
+							<p>
+								БЦ Іллінський. Україна, 04070, місто Київ, вул.Іллінська,
+								будинок 8 (<a
+									class="text-link"
+									href="https://maps.app.goo.gl/gY3LxxQUisAjiq5d8"
+									target="_blank"
+									rel="nofollow noreferrer noopener"
+									title="Адреса офіса БТС брокер на мапі гугл мапс"
+									>Позначка на мапі</a
+								>)
+							</p>
+						</li>
+						<li class="contacts-us-creds-item">
+							<p class="contact-us-creds-title">
+								Графік роботи ТОВ "БТС Брокер":
+							</p>
+							<p>Пн-Пт: 10:00-18:00</p>
+							<p>Сб,Нд: вихідні</p>
+						</li>
+						<li class="contacts-us-creds-item">
+							<p class="contact-us-creds-title">Телефон:</p>
+							<a class="text-link" href="tel:+380947102606"
+								>+38 094 710 26 06</a
+							>
+						</li>
+						<li class="contacts-us-creds-item">
+							<p class="contact-us-creds-title">Бек-офіс:</p>
+							<a class="text-link" href="mailto:sales@btc-broker.com"
+								>sales@btc-broker.com</a
+							>
+						</li>
+						<li class="contacts-us-creds-item">
+							<p class="contact-us-creds-title">Депозитарій:</p>
+							<a class="text-link" href="mailto:gdi@btc-broker.com"
+								>gdi@btc-broker.com</a
+							>
+						</li>
+					</ul>
+				</address>
+				<div class="contact-us-faq-pointer">
+					<h2 class="contact-us-subtitle">Поширені запитання</h2>
+					<p>
+						На найбільш поширені запитання ми зібрали відповіді на сторінці
+						<a class="text-link" href="/faq" title="Покликання на сторінку FAQ"
+							>Поширених запитань</a
+						>
+					</p>
+				</div>
+			</div>
+			<form
+				class="form form-contact-us"
+				id="contact-us-form"
+				name="contact-us-form"
+				autocomplete="on"
+				action="/btc_contact_us_form.php"
+				method="post"
+				enctype="multipart/form-data"
+			>
+				<div
+					class="form-group"
+					role="group"
+					aria-labelledby="contact-us-inputs"
+				>
+					<h2 class="form-group-title" id="contact-us-inputs">
+						Залишились питання? Постав їх нам напряму
+					</h2>
+					<label for="firstname" class="form-label required">Ім'я</label
+					><input
+						type="text"
+						id="firstname"
+						name="firstname"
+						class="form-input"
+						minlength="2"
+						maxlength="25"
+						required
+						autocomplete="given-name"
+						pattern="[а-яА-ЯіїґєІЄҐЇ'`\- ]{2,25}"
+						placeholder="Тарас"
+						title="Введіть ім'я українською"
+					/>
+					<label for="lastname" class="form-label required">Прізвище</label>
+					<input
+						type="text"
+						id="lastname"
+						name="lastname"
+						class="form-input"
+						minlength="2"
+						maxlength="25"
+						required
+						autocomplete="family-name"
+						pattern="[а-яА-ЯіїґєІЄҐЇ'`\- ]{2,25}"
+						placeholder="Шевченко"
+						title="Введіть прізвище українською"
+					/>
+					<label for="email" class="form-label required">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						class="form-input"
+						minlength="2"
+						maxlength="50"
+						required
+						autocomplete="email"
+						placeholder="name@example.com"
+						title="Введіть дійсний email"
+					/>
+					<label for="phone" class="form-label required">Телефон</label>
+					<input
+						type="tel"
+						id="phone"
+						name="phone"
+						class="form-input"
+						minlength="10"
+						maxlength="20"
+						required
+						autocomplete="tel"
+						pattern="\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|
+2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|
+4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$"
+						placeholder="+380947102606"
+						title="Введіть номер телефону в міжнародному форматі без пробілів"
+					/>
+					<label for="feedback-message" class="form-label required"
+						>Повідомлення</label
+					>
+					<textarea
+						id="feedback-message"
+						type="text"
+						name="feedback-message"
+						class="form-input contact-us-textarea"
+						minlength="4"
+						maxlength="1500"
+						required
+						placeholder="Введіть Ваше повідомлення"
+						title="Введіть Ваше повідомлення"
+					></textarea>
+				</div>
+				<button
+					type="submit"
+					class="button-primary form-submit-button g-recaptcha"
+					data-sitekey="6Lf87j0pAAAAANXp3uc317YwXomuR7zOpo7VZk5k"
+					data-callback="onSubmit"
+					data-action="submit"
+				>
+					Поставити питання
+				</button>
+			</form>
+		</div>
+	</div>
+</section>

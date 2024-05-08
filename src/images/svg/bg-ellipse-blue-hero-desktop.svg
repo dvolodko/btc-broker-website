@@ -1,0 +1,14 @@
+<svg width="1920" height="1920" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <filter id="BlurFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1920">
+      <feGaussianBlur stdDeviation="64" result="blur" />
+    </filter>
+  </defs>
+
+  <g filter="url(#BlurFilter)">
+    <rect x="1024" y="256" rx="16" ry="16" width="416" height="568" transform="rotate(13) skewY(-4)" fill="#869CFF"/>
+  </g>
+
+    <!-- <rect x="0" y="0" rx="0" ry="0" width="640" height="640" stroke="red" fill="transparent" stroke-width="1"/> -->
+</svg>

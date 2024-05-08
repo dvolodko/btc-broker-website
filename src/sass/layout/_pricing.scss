@@ -1,0 +1,78 @@
+.pricing-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat;
+	background-position: calc(50% + 64px) calc(0% - 196px),
+		calc(50% - 256px) calc(0% - 128px);
+	background-size: auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 256px) calc(0% - 720px),
+			calc(50% - 384px) calc(0% - 480px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 480px) calc(0% - 720px),
+			calc(50% - 384px) calc(0% - 480px);
+	}
+}
+
+.pricing-container {
+	padding-top: $L;
+}
+
+.pricing-subheader {
+	margin-bottom: $L;
+}
+
+.pdf-viewer-header {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	margin-bottom: $XS;
+	@include mq(tablet-S) {
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: row;
+		gap: $XS;
+	}
+}
+
+.pdf-viewer-section {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	height: 100vh;
+}
+
+.pricing-pdf-main,
+.pricing-pdf-fallback {
+	@media (pointer: coarse) {
+		height: 0;
+		width: 0;
+		display: none;
+		visibility: hidden;
+	}
+	@media (pointer: fine), (pointer: none) {
+		display: block;
+		visibility: visible;
+		width: 100%;
+		height: 100%;
+		flex: 1;
+	}
+}
+
+.pricing-pdf-main-mobile {
+	@media (pointer: coarse) {
+		display: block;
+		visibility: visible;
+		width: 100%;
+		height: 100%;
+		flex: 1;
+	}
+	@media (pointer: fine), (pointer: none) {
+		height: 0;
+		width: 0;
+		display: none;
+		visibility: hidden;
+	}
+}

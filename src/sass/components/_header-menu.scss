@@ -1,0 +1,104 @@
+.header-menu-container-services,
+.header-menu-container-about-us {
+	position: absolute;
+	right: 64px;
+	top: 92px;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	padding: 32px $L;
+	background-color: $neutralColor0;
+	border: 1px solid $primaryColor950;
+	border-radius: $S;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+		transform $mainTransitionDuration $mainTransitionTimingFunction,
+		visibility $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.header-menu-container-about-us {
+	right: 128px;
+}
+
+.header-menu-container-services::before,
+.header-menu-container-about-us::before {
+	content: "";
+	position: absolute;
+	left: 203px;
+	top: -13px;
+	width: 24px;
+	height: 24px;
+	background-color: $neutralColor0;
+	border: 1px solid $primaryColor950;
+	transform: rotate(-45deg);
+	border-top-right-radius: 8px;
+	border-color: $primaryColor950 $primaryColor950 transparent transparent;
+}
+
+.header-menu-container-about-us::before {
+	left: 127px;
+}
+
+.header-menu-container-services::after,
+.header-menu-container-about-us::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	transform-origin: center;
+	transform: scale(1.06);
+}
+
+.header-menu-container-services.active,
+.header-menu-container-about-us.active {
+	transform: scaleY(1);
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+	cursor: auto;
+}
+
+.header-menu {
+	@include flex(flex, center, flex-start);
+	gap: $L;
+}
+
+.header-menu-item {
+	width: 224px;
+}
+
+.header-menu-submenu-title {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $primaryColor950;
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-color: $primaryColor700;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px;
+	margin-bottom: $XS;
+}
+
+.header-menu-submenu-link {
+	color: $neutralColor950;
+	text-decoration-color: transparent;
+	transition: color $mainTransitionDuration $mainTransitionTimingFunction,
+		text-decoration-color $mainTransitionDuration $mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		color: $accentColor500;
+		text-decoration-line: underline;
+		text-decoration-style: solid;
+		text-decoration-color: $accentColor500;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 2px;
+	}
+}
+
+.header-menu-submenu-link:not(:last-child) {
+	margin-bottom: $XS;
+}

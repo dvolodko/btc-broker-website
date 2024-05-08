@@ -1,0 +1,65 @@
+// Colors
+
+$primaryColor950: #1f294c;
+$primaryColor900: #374275;
+$primaryColor700: #3757be;
+$primaryColor400: #75a4e5;
+$primaryColor100: #e0eaf9;
+$accentColor500: #fe7911;
+$accentColor400: #ff9838;
+$accentColor200: #ffe5c2;
+$neutralColor950: #282828;
+$neutralColor600: #515151;
+$neutralColor500: #9a9a9a;
+$neutralColor300: #dadada;
+$neutralColor0: #ffffff;
+$neutralColor0Transparency600: rgba(
+	$color: #ffffff,
+	$alpha: 0.6,
+);
+$neutralColor0Transparency950: rgba(
+	$color: #ffffff,
+	$alpha: 0.95,
+);
+$primaryColor950Transparency600: rgba(
+	$color: #1f294c,
+	$alpha: 0.6,
+);
+$systemColorError: #f04e02;
+$systemColorLink: #5484dd;
+$systemColorLinkTransparency000: rgba(
+	$color: #5484dd,
+	$alpha: 0,
+);
+
+// Others variables
+
+$mainTransitionDuration: 250ms;
+$doubleTransitionDuration: 500ms;
+$mainTransitionTimingFunction: cubic-bezier(0.4, 0, 0.2, 1);
+$mainFontFamily: "Manrope", sans-serif;
+$secondaryFontFamily: "Raleway", sans-serif;
+$shadowElevationLow: 0.3px 0.6px 0.8px hsl(0deg 0% 63% / 0.34),
+	0.5px 1.1px 1.4px -1.2px hsl(0deg 0% 63% / 0.34),
+	1.3px 2.6px 3.3px -2.5px hsl(0deg 0% 63% / 0.34);
+$shadowElevationMedium: 0.3px 0.6px 0.8px hsl(0deg 0% 63% / 0.29),
+	0.9px 1.7px 2.2px -0.6px hsl(0deg 0% 63% / 0.29),
+	1.7px 3.3px 4.2px -1.2px hsl(0deg 0% 63% / 0.29),
+	3.4px 6.7px 8.5px -1.9px hsl(0deg 0% 63% / 0.29),
+	6.6px 13px 16.4px -2.5px hsl(0deg 0% 63% / 0.29);
+$shadowElevationHigh: 0.3px 0.6px 0.8px hsl(0deg 0% 63% / 0.27),
+	1.6px 3.1px 3.9px -0.3px hsl(0deg 0% 63% / 0.27),
+	2.8px 5.5px 6.9px -0.6px hsl(0deg 0% 63% / 0.27),
+	4.3px 8.4px 10.6px -0.8px hsl(0deg 0% 63% / 0.27),
+	6.2px 12.2px 15.4px -1.1px hsl(0deg 0% 63% / 0.27),
+	9px 17.6px 22.2px -1.4px hsl(0deg 0% 63% / 0.27),
+	12.7px 25px 31.5px -1.7px hsl(0deg 0% 63% / 0.27),
+	17.8px 35px 44.2px -1.9px hsl(0deg 0% 63% / 0.27),
+	24.5px 48.1px 60.7px -2.2px hsl(0deg 0% 63% / 0.27),
+	33px 64.9px 81.9px -2.5px hsl(0deg 0% 63% / 0.27);
+$XS: 8px;
+$S: 12px;
+$M: 20px;
+$L: 40px;
+$XL: 80px;
+$XXL: 120px;

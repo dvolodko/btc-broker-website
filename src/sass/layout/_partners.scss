@@ -1,0 +1,108 @@
+.partners-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+		no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 0px) calc(0% - 128px),
+		calc(50% - 128px) calc(0% + 0px), calc(50% - 0px) calc(25% + 0px),
+		calc(50% - 256px) calc(25% + 300px), calc(50% - 0px) calc(50% + 0px),
+		calc(50% - 256px) calc(50% + 300px), calc(50% - 0px) calc(75% + 416px),
+		calc(50% - 256px) calc(75% + 300px);
+	background-size: auto, auto, auto, auto, auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 256px) calc(50% - 480px),
+			calc(50% - 480px) calc(50% - 64px), calc(50% - 512px) calc(50% + 640px),
+			calc(50% + 128px) calc(50% + 320px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 352px) calc(50% - 224px),
+			calc(50% - 256px) calc(50% - 64px), calc(50% - 736px) calc(50% + 512px),
+			calc(50% + 256px) calc(50% + 512px);
+	}
+}
+
+.partners-container {
+	padding-top: $L;
+	padding-bottom: $XL;
+	@include mq(tablet-S) {
+		padding-left: 76px;
+		padding-right: 76px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+	@include mq(desktop) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+.partners-cards-list {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	gap: $M;
+	@include mq(tablet-S) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+}
+
+.partners-cards-item {
+	min-height: 480px;
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	overflow: hidden;
+	transform: scale(1);
+	transition: transform $mainTransitionDuration $mainTransitionTimingFunction,
+		background-color $mainTransitionDuration $mainTransitionTimingFunction,
+		box-shadow $mainTransitionDuration $mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		transform: scale(0.99);
+		background-color: $primaryColor100;
+		box-shadow: $shadowElevationLow;
+	}
+	@include mq(tablet-S) {
+		flex-basis: calc((100% - 1 * $M) / 2);
+	}
+	@include mq(tablet-L) {
+		flex-basis: calc((100% - 2 * $M) / 3);
+	}
+}
+
+.partners-cards-link {
+	@include flex(flex, space-between, stretch);
+	flex-direction: column;
+	height: 100%;
+	min-height: 480px;
+}
+
+.partners-cards-image-wrapper {
+	@include flex(flex, center, center);
+	flex: 1;
+	padding: $XL $M;
+}
+
+.partners-cards-logo {
+	max-height: 128px;
+}
+
+.partners-cards-description-wrapper {
+	@include flex(flex, center, center);
+	min-height: 224px;
+	border-top: 1px solid $neutralColor300;
+	padding: $M;
+}

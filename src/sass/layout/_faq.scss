@@ -1,0 +1,54 @@
+.faq-section {
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat;
+	background-position: calc(50% + 56px) calc(50% + 304px),
+		calc(50% + 48px) calc(50% + 520px);
+	background-size: auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 224px) calc(50% + 208px),
+			calc(50% - 48px) calc(50% + 288px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 272px) calc(50% + 104px),
+			calc(50% - 0px) calc(50% + 192px);
+	}
+}
+
+.faq-container {
+	padding-top: $XXL;
+	padding-bottom: $XXL;
+	@include mq(tablet-S) {
+		padding-top: $L;
+		padding-left: 76px;
+		padding-right: 76px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+	@include mq(desktop) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+.faq-section-header {
+	margin-bottom: $L;
+}
+
+.faq-accordion {
+	margin-bottom: $L;
+}
+
+.accordion-content-text-link {
+	color: $primaryColor700;
+	text-decoration: underline;
+}
+
+.faq-button {
+	justify-content: center;
+	color: $primaryColor700;
+}

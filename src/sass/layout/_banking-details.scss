@@ -1,0 +1,125 @@
+.banking-details-section {
+	padding-top: 88px;
+	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+		url("/src/images/svg/bg-shape-blue-faq-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 0px) calc(0% - 160px),
+		calc(50% - 160px) calc(25% - 0px), calc(50% - 256px) calc(50% + 640px),
+		calc(50% + 128px) calc(75% + 0px);
+	background-size: auto, auto, auto, auto;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+			url("/src/images/svg/bg-shape-blue-faq-768.svg");
+		background-position: calc(50% + 224px) calc(0% - 640px),
+			calc(50% - 512px) calc(25% - 256px), calc(50% - 512px) calc(50% + 512px),
+			calc(50% + 128px) calc(75% + 512px);
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 352px) calc(50% - 256px),
+			calc(50% - 512px) calc(50% - 64px), calc(50% - 736px) calc(50% + 512px),
+			calc(50% + 256px) calc(50% + 512px);
+	}
+}
+
+.banking-details-container {
+	padding-top: $L;
+	padding-bottom: $XXL;
+	@include mq(tablet-S) {
+		padding-left: 76px;
+		padding-right: 76px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+	@include mq(desktop) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+.banking-details-paragraph {
+	font-weight: 700;
+	margin-bottom: $M;
+}
+
+.blue-attention-text {
+	color: $systemColorLink;
+	font-size: 18px;
+}
+
+.banking-details-description-content-wrapper {
+	@include mq(tablet-L) {
+		@include flex(flex, center, flex-start);
+		gap: $M;
+	}
+}
+
+.banking-details-description-wrapper {
+	@include mq(tablet-L) {
+		flex-basis: calc((130% - 1 * $L) / 2);
+	}
+}
+
+.banking-details-list {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	gap: $M;
+}
+
+.banking-details-item {
+	padding: 16px $M;
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+}
+
+.banking-details-logo-wrapper {
+	@include flex(flex, center, center);
+	padding-bottom: $M;
+	min-height: 128px;
+}
+
+.banking-details-logo {
+	max-width: 256px;
+}
+
+.banking-details-item-description-wrapper {
+	border-top: 1px solid $neutralColor300;
+	padding-top: $M;
+}
+
+.banking-details-item-title {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $neutralColor950;
+	margin-bottom: $M;
+}
+
+.banking-details-item-strong-text {
+	font-weight: 700;
+	color: $neutralColor950;
+	cursor: pointer;
+}
+
+.banking-details-item-light-text {
+	font-size: 10px;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.banking-details-section-illustration {
+	display: none;
+	@include mq(tablet-L) {
+		display: block;
+		max-width: 308px;
+	}
+	@include mq(desktop) {
+		display: block;
+		max-width: 352px;
+	}
+}

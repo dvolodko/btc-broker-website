@@ -1,0 +1,116 @@
+.bond-ua-section {
+	background-image: url("/src/images/iphone-hero.webp"),
+		url("/src/images/svg/bg-ellipse-yellow-hero-390.svg"),
+		url("/src/images/svg/bg-ellipse-blue-hero-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 120px) calc(50% - 64px),
+		calc(50% - 64px) calc(50% + 160px), calc(50% + 128px) calc(50% - 64px);
+	background-size: 352px, auto auto, 640px;
+	padding-bottom: 480px;
+	margin-bottom: -480px;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/iphone-hero-side-768.webp"),
+			url("/src/images/iphone-hero-front-768.webp"),
+			url("/src/images/svg/bg-shape-yellow-hero-768.svg"),
+			url("/src/images/svg/bg-ellipse-blue-hero-768.svg");
+		background-position: calc(50% + 304px) calc(50% - 176px),
+			calc(50% + 128px) calc(50% - 232px), calc(50% - 64px) calc(50% + 88px),
+			calc(50% + 272px) calc(50% - 128px);
+		background-size: 340px, 328px, 634px, 528px;
+	}
+	@include mq(tablet-L) {
+		background-position: calc(50% + 392px) calc(50% - 64px),
+			calc(50% + 180px) calc(50% - 112px), calc(50% - 256px) calc(50% + 80px),
+			calc(50% + 368px) calc(50% - 48px);
+		background-size: 408px, 394px, 768px, 576px;
+		padding-bottom: 320px;
+		margin-bottom: -320px;
+	}
+	@include mq(desktop) {
+		background-image: url("/src/images/iphone-hero-side-768.webp"),
+			url("/src/images/iphone-hero-front-768.webp"),
+			url("/src/images/svg/bg-shape-yellow-hero-768.svg"),
+			url("/src/images/svg/bg-ellipse-blue-hero-desktop.svg");
+		background-position: calc(50% + 196px) calc(50% - 88px),
+			calc(50% + 398px) calc(50% - 80px), calc(50% + 320px) calc(50% + 32px),
+			calc(50% + 96px) calc(50% + 64px);
+		background-size: 340px, 328px, 768px, 1152px;
+		padding-bottom: 320px;
+		margin-bottom: -320px;
+	}
+}
+
+.bond-ua-container {
+	@include flex(flex, flex-start, center);
+	padding-top: $M;
+	padding-bottom: $M;
+	@include mq(tablet-S) {
+		padding-top: $L;
+		padding-bottom: $XL;
+	}
+}
+
+.bond-ua-description-container {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	padding-bottom: 116px;
+	@include mq(tablet-S) {
+		flex-basis: calc((100% - 1 * $M) / 2);
+		padding-bottom: 0;
+	}
+}
+
+.bond-ua-description-subheader {
+	margin-bottom: $L;
+	text-wrap: balance;
+}
+
+.buttons-app-download {
+	@include flex(flex, center, center);
+	flex-direction: column;
+	gap: $S;
+	@include mq(tablet-S) {
+		flex-direction: row;
+		gap: $M;
+	}
+}
+
+.bond-ua-app-google-link,
+.bond-ua-app-apple-link {
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	transition: background-color $mainTransitionDuration
+			$mainTransitionTimingFunction,
+		box-shadow $mainTransitionDuration $mainTransitionTimingFunction;
+	transition: background-color $mainTransitionDuration
+		$mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		background-color: $primaryColor950;
+		box-shadow: $shadowElevationLow;
+	}
+}
+
+.bond-ua-app-google-link-vector-neutral950 {
+	fill: $primaryColor950;
+	stroke: $neutralColor950;
+	transition: fill $mainTransitionDuration $mainTransitionTimingFunction,
+		stroke $mainTransitionDuration $mainTransitionTimingFunction;
+	.bond-ua-app-google-link:hover &,
+	.bond-ua-app-google-link:focus & {
+		fill: $neutralColor0;
+		stroke: $neutralColor0;
+	}
+}
+
+.bond-ua-app-google-link-vector-primary950,
+.bond-ua-app-apple-link-primary950 {
+	fill: $primaryColor950;
+	transition: fill $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.bond-ua-app-google-link:hover .bond-ua-app-google-link-vector-primary950,
+.bond-ua-app-apple-link:hover .bond-ua-app-apple-link-primary950 {
+	fill: $neutralColor0;
+}

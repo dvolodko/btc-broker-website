@@ -1,0 +1,32 @@
+.overlay,
+.modal {
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+		visibility $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.overlay.active,
+.modal.active {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+		visibility $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.overlay {
+	position: fixed;
+	z-index: 3;
+	top: 0px;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(89, 120, 163, 0.6);
+	overflow: auto;
+}

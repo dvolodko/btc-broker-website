@@ -1,0 +1,67 @@
+.button-primary {
+	display: block;
+	text-align: center;
+	padding: $S 28px;
+	color: $neutralColor0;
+	background-color: $primaryColor700;
+	box-shadow: $shadowElevationMedium;
+	border: none;
+	border-radius: $S;
+	transition: background-color $mainTransitionDuration
+			$mainTransitionTimingFunction,
+		color $mainTransitionDuration $mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		background-color: $primaryColor400;
+	}
+	&:active {
+		background-color: $primaryColor950;
+	}
+	&:disabled {
+		color: $neutralColor500;
+		background-color: $primaryColor100;
+	}
+	@include mq(tablet-S) {
+		width: 280px;
+	}
+	@include mq(desktop) {
+		width: 192px;
+	}
+}
+
+.button-secondary {
+	@include flex(flex, flex-start, center);
+	font-family: $secondaryFontFamily;
+	gap: $XS;
+	@include font(800, 1rem, 1.5rem, 0);
+	text-transform: uppercase;
+	color: $primaryColor700;
+	transition: color $mainTransitionDuration $mainTransitionTimingFunction;
+	& .button-secondary-icon {
+		transform-origin: left;
+		transform: scaleX(1);
+		transition: transform $mainTransitionDuration $mainTransitionTimingFunction;
+	}
+	&:hover,
+	&:focus {
+		color: $primaryColor400;
+		& .button-secondary-icon {
+			transform: scaleX(1.28);
+		}
+	}
+	&:active {
+		color: $primaryColor950;
+	}
+	&:disabled {
+		color: $neutralColor500;
+		color: $primaryColor100;
+	}
+}
+
+.form-submit-button {
+	cursor: pointer;
+	margin: 0 auto;
+	@include mq(desktop) {
+		width: 256px;
+	}
+}

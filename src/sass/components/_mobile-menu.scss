@@ -1,0 +1,175 @@
+.mobile-menu-container {
+	@include flex(flex, space-between, stretch);
+	flex-direction: column;
+	position: absolute;
+	right: -12px;
+	top: 92px;
+	max-height: calc(100dvh - 91px);
+	width: 300px;
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	padding: $L 44px $L 32px;
+	background-color: $neutralColor0;
+	border: 1px solid $primaryColor950;
+	border-radius: $S;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+		transform $mainTransitionDuration $mainTransitionTimingFunction,
+		visibility $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.mobile-menu-container::before {
+	content: "";
+	position: absolute;
+	right: 24px;
+	top: -13px;
+	width: 24px;
+	height: 24px;
+	background-color: $neutralColor0;
+	border: 1px solid $primaryColor950;
+	transform: rotate(-45deg);
+	border-top-right-radius: 8px;
+	border-color: $primaryColor950 $primaryColor950 transparent transparent;
+}
+
+.mobile-menu-container.active {
+	transform: scaleY(1);
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+		transform $mainTransitionDuration $mainTransitionTimingFunction,
+		visibility $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.mobile-menu {
+	@include flex(flex, space-between, stretch);
+	flex-direction: column;
+	gap: $L;
+	overflow-y: scroll;
+	margin-bottom: $L;
+}
+
+.mobile-menu-top-icons {
+	@include flex(flex, space-between, center);
+}
+
+.mobile-menu-back-btn {
+	border: none;
+	background-color: transparent;
+	transform: translateX(128px);
+	opacity: 0;
+	transition: transform $mainTransitionDuration $mainTransitionTimingFunction,
+		opacity $mainTransitionDuration $mainTransitionTimingFunction;
+}
+
+.mobile-menu-back-btn.active {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+.mobile-menu-back-icon {
+	stroke: $neutralColor950;
+}
+
+.language-select-btn {
+	@include flex(flex, center, center);
+	gap: $S;
+	border: none;
+	background-color: transparent;
+}
+
+.mobile-nav-menu {
+	position: relative;
+	overflow-x: hidden;
+}
+
+.mobile-nav-menu-list {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+}
+
+.mobile-nav-menu-btn {
+	@include flex(flex, space-between, center);
+	@include font(400, 1rem, 1.5rem, 0);
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid $neutralColor300;
+	background-color: transparent;
+	padding: $M 0;
+}
+
+.mobile-nav-menu-icon {
+	stroke: $neutralColor950;
+}
+
+.mobile-menu-submenu-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: $neutralColor0;
+	transform: translateX(288px);
+	transition: transform $mainTransitionDuration $mainTransitionTimingFunction;
+
+	.mobile-nav-menu-item.active & {
+		transform: translateX(0px);
+	}
+}
+
+.mobile-nav-submenu-item:not(:last-child) {
+	padding-bottom: $M;
+	border-bottom: 1px solid $neutralColor300;
+}
+
+.mobile-nav-submenu-item:not(:first-child) {
+	padding-top: $M;
+}
+
+.mobile-nav-submenu-title {
+	font-family: $secondaryFontFamily;
+	@include font(700, 1.25rem, 1.5rem, 0);
+	color: $primaryColor950;
+	text-decoration-line: underline;
+	text-decoration-style: solid;
+	text-decoration-color: $primaryColor700;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 2px;
+	margin-bottom: $XS;
+}
+
+.mobile-nav-submenu-link {
+	color: $neutralColor950;
+}
+
+.mobile-nav-submenu-link:not(:last-child) {
+	margin-bottom: $XS;
+}
+
+.mobile-menu-bottom-elements {
+	@include flex(flex, center, stretch);
+	flex-direction: column;
+	gap: $L;
+}
+
+// .mobile-menu-search-input {
+//   width: 100%;
+//   padding: $S 16px $S 52px;
+//   border: 1px solid $neutralColor500;
+//   border-radius: 4px;
+//   background: transparent url('/src/images/svg/search-icon.svg') no-repeat left
+//     16px center;
+// }
+
+// .mobile-menu-search-input:active {
+//   outline: 1px solid $neutralColor500;
+// }
+
+.create-account-btn {
+	background-color: #3f5bdd;
+	@include mq(tablet-S) {
+		display: none;
+	}
+}

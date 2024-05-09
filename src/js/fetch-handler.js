@@ -70,9 +70,14 @@ async function getBondsQuotes(assetType) {
 function replaceBondsTitle(string) {
 	if (string.includes("Bond")) {
 		return string.replace("Bond", "ОВДП");
-	}
-	if (string.includes("EUROBOND")) {
+	} else if (string.includes("EUROBOND")) {
 		return string.replace("EUROBOND", "ОЗДП");
+	} else if (string.includes("ОВГЗ")) {
+		return string.replace("ОВГЗ", "ОВДП");
+	} else if (string.includes("Военная ОВГЗ")) {
+		return string.replace("Военная ОВГЗ", "ОВДП");
+	} else if (string.includes("ОВнешГЗ")) {
+		return string.replace("ОВнешГЗ", "ОЗДП");
 	} else {
 		return string;
 	}

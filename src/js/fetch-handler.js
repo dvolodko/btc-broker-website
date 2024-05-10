@@ -74,6 +74,8 @@ function replaceBondsTitle(string) {
 		return string.replace("EUROBOND", "ОЗДП");
 	} else if (string.includes("Военная")) {
 		return string.replace("Военная ОВГЗ", "ОВДП");
+	} else if (string.includes("Военные")) {
+		return string.replace("Военные ОВГЗ", "ОВДП");
 	} else if (string.includes("ОВГЗ")) {
 		return string.replace("ОВГЗ", "ОВДП");
 	} else if (string.includes("ОВнешГЗ")) {

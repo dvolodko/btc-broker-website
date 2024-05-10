@@ -21,14 +21,14 @@
 			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
 			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
 			url("/src/images/svg/bg-shape-blue-faq-768.svg");
-		background-position: calc(50% + 256px) calc(50% - 480px),
-			calc(50% - 480px) calc(50% - 64px), calc(50% - 512px) calc(50% + 640px),
-			calc(50% + 128px) calc(50% + 320px);
+		background-position: calc(50% + 256px) calc(0% - 640px),
+			calc(50% - 480px) calc(25% - 64px), calc(50% - 512px) calc(50% + 1280px),
+			calc(50% + 128px) calc(75% + 320px);
 	}
-	@include mq(desktop) {
-		background-position: calc(50% + 352px) calc(50% - 224px),
-			calc(50% - 256px) calc(50% - 64px), calc(50% - 736px) calc(50% + 512px),
-			calc(50% + 256px) calc(50% + 512px);
+	@include mq(tablet-L) {
+		background-position: calc(50% + 256px) calc(0% - 640px),
+			calc(50% - 480px) calc(25% - 64px), calc(50% - 512px) calc(50% + 800px),
+			calc(50% + 128px) calc(75% + 320px);
 	}
 }
 
@@ -52,9 +52,40 @@
 .mentions-in-media-cards-list {
 	@include flex(flex, center, stretch);
 	flex-direction: column;
+	gap: $L;
+}
+
+.mentions-in-media-cards-item {
+	padding-bottom: $L;
+	border-bottom: 1px solid #dadada;
+}
+
+.mentions-in-media-cards-date {
+	padding-left: $S;
+	padding-bottom: $S;
+}
+
+.flex-wrp {
+	display: flex;
+	flex-direction: column;
 	gap: $M;
-	@include mq(tablet-S) {
+	@include mq(tablet-L) {
 		flex-direction: row;
-		flex-wrap: wrap;
+	}
+}
+
+.image-thumb {
+	overflow: hidden;
+	border-radius: $S;
+	@include mq(tablet-L) {
+		width: calc((100% - 20px) / 2);
+	}
+}
+
+.mentions-in-media-cards-paragraph {
+	padding-right: $S;
+	padding-left: $S;
+	@include mq(tablet-L) {
+		width: calc((100% - 20px) / 2);
 	}
 }

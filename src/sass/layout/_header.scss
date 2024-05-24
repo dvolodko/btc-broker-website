@@ -99,6 +99,15 @@
 
 .header-language-select-btn {
 	display: none;
+	padding: $XS;
+	border-radius: $XS;
+	transition: box-shadow $mainTransitionDuration $mainTransitionTimingFunction,
+		transform $mainTransitionDuration $mainTransitionTimingFunction;
+	&:hover,
+	&:focus {
+		box-shadow: $shadowElevationMedium;
+		transform: scale(1.05);
+	}
 	@include mq(desktop) {
 		display: flex;
 	}

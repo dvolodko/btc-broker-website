@@ -61,8 +61,13 @@
 }
 
 .mentions-in-media-cards-date {
+	color: $neutralColor950;
+	font-family: $secondaryFontFamily;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.5rem;
 	padding-left: $S;
-	padding-bottom: $S;
+	margin-bottom: $S;
 }
 
 .flex-wrp {

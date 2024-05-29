@@ -80,6 +80,7 @@
 }
 
 .image-thumb {
+	height: fit-content;
 	overflow: hidden;
 	border-radius: $S;
 	@include mq(tablet-L) {
@@ -87,10 +88,14 @@
 	}
 }
 
-.mentions-in-media-cards-paragraph {
+.mentions-in-media-cards-text-wrp {
 	padding-right: $S;
 	padding-left: $S;
 	@include mq(tablet-L) {
 		width: calc((100% - 20px) / 2);
 	}
+}
+
+.mentions-in-media-cards-paragraph:not(:last-child) {
+	margin-bottom: $S;
 }

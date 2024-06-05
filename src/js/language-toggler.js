@@ -1,9 +1,13 @@
-const languageTogglerButton = document.querySelector(
-	".header-language-select-btn",
-);
+(() => {
+	const languageTogglerButton = document.querySelector(
+		".header-language-select-btn",
+	);
 
-languageTogglerButton.addEventListener("click", () => {
-	console.log(window.location);
-});
-
-console.log(window.location.pathname);
+	if (window.location.pathname.includes("/en")) {
+		const newPathName = window.location.pathname.replace("/en", "");
+		languageTogglerButton.attributes.href.value = newPathName;
+	} else {
+		const newPathName = `/en${window.location.pathname}`;
+		languageTogglerButton.attributes.href.value = newPathName;
+	}
+})();

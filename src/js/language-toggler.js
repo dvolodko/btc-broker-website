@@ -3,7 +3,10 @@
 		".header-language-select-btn",
 	);
 
-	if (window.location.pathname.includes("/en")) {
+	if (window.location.pathname === "/") {
+		const newPathName = "/en/index";
+		languageTogglerButton.attributes.href.value = newPathName;
+	} else if (window.location.pathname.includes("/en")) {
 		const newPathName = window.location.pathname.replace("/en", "");
 		languageTogglerButton.attributes.href.value = newPathName;
 	} else {

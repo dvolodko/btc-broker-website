@@ -5,21 +5,21 @@ const pdfViewerFallback = document.getElementById("pdf-fallback");
 
 pdfViewerMain.setAttribute(
 	"data",
-	"https://btc-broker.com/upload/documents/pricing/2023/pricing-2023-09-01.pdf",
+	"https://btc-broker.com/upload/documents/pricing/pricing-2024-06-10.pdf",
 );
 
 const dateSelectorHandler = event => {
 	pdfViewerMain.setAttribute(
 		"data",
-		`https://btc-broker.com/upload/documents/pricing/2023/${event.currentTarget.value}.pdf`,
+		`https://btc-broker.com/upload/documents/pricing/${event.currentTarget.value}.pdf`,
 	);
 	pdfViewerMobile.setAttribute(
 		"src",
-		`https://btc-broker.com/web/viewer.html?file=https%3A%2F%2Fbtc-broker.com%2Fupload%2Fdocuments%2Fpricing%2F2023%2F${event.currentTarget.value}.pdf`,
+		`https://btc-broker.com/web/viewer.html?file=https%3A%2F%2Fbtc-broker.com%2Fupload%2Fdocuments%2Fpricing%2F${event.currentTarget.value}.pdf`,
 	);
 	pdfViewerFallback.setAttribute(
 		"src",
-		`https://btc-broker.com/upload/documents/pricing/2023/${event.currentTarget.value}.pdf`,
+		`https://btc-broker.com/upload/documents/pricing/${event.currentTarget.value}.pdf`,
 	);
 };
 

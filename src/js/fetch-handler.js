@@ -1,10 +1,24 @@
 const axios = require("axios").default;
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 
-const BASE_URL = "https://bond.ua/landing/asset/";
 const BONDS_URL = "?asset_type=0";
 const EUROBONDS = "?asset_type=2";
 const CORPORATE = "?asset_type=3";
+let acceptLanguage = "uk";
+let noQuotesMessage = "На даний момент котирувань немає";
+
+if (window.location.pathname.includes("/en")) {
+	acceptLanguage = "en";
+	noQuotesMessage = "At the moment, there are no quotes available";
+}
+
+const axiosInstant = axios.create({
+	baseURL: "https://bond.ua/landing/asset/",
+	timeout: 5000,
+	headers: {
+		"Accept-Language": acceptLanguage,
+	},
+});
 
 async function renderBondsQuotesTable() {
 	const bondsQuotesContainer = document.querySelector(".bonds-table");
@@ -54,9 +68,7 @@ async function getBondsQuotes(assetType) {
 			svgColor: "#3757be",
 			backgroundColor: "#5978a399",
 		});
-		const response = await axios.get(`${BASE_URL}${assetType}`, {
-			timeout: 3000,
-		});
+		const response = await axiosInstant.get(`${assetType}`);
 		Loading.remove();
 		if (response.data.results.length === 0) {
 			return false;
@@ -67,23 +79,37 @@ async function getBondsQuotes(assetType) {
 	}
 }
 
-function replaceBondsTitle(string) {
-	if (string.includes("Bond")) {
-		return string.replace("Bond", "ОВДП");
-	} else if (string.includes("EUROBOND")) {
-		return string.replace("EUROBOND", "ОЗДП");
-	} else if (string.includes("Военная")) {
-		return string.replace("Военная ОВГЗ", "ОВДП");
-	} else if (string.includes("Военные")) {
-		return string.replace("Военные ОВГЗ", "ОВДП");
-	} else if (string.includes("ОВГЗ")) {
-		return string.replace("ОВГЗ", "ОВДП");
-	} else if (string.includes("ОВнешГЗ")) {
-		return string.replace("ОВнешГЗ", "ОЗДП");
-	} else {
-		return string;
-	}
-}
+// function replaceBondsTitle(string) {
+// 	if (string.includes("Bond")) {
+// 		return string.replace("Bond", "ОВДП");
+// 	} else if (string.includes("EUROBOND")) {
+// 		return string.replace("EUROBOND", "ОЗДП");
+// 	} else if (string.includes("Военная")) {
+// 		return string.replace("Военная ОВГЗ", "ОВДП");
+// 	} else if (string.includes("Военные")) {
+// 		return string.replace("Военные ОВГЗ", "ОВДП");
+// 	} else if (string.includes("ОВГЗ")) {
+// 		return string.replace("ОВГЗ", "ОВДП");
+// 	} else if (string.includes("ОВнешГЗ")) {
+// 		return string.replace("ОВнешГЗ", "ОЗДП");
+// 	} else {
+// 		return string;
+// 	}
+// }
+
+// function replaceBondsTitle(string) {
+// 	if (string.includes("Военная")) {
+// 		return string.replace("Военная ОВГЗ", "ОВДП");
+// 	} else if (string.includes("Военные")) {
+// 		return string.replace("Военные ОВГЗ", "ОВДП");
+// 	} else if (string.includes("ОВГЗ")) {
+// 		return string.replace("ОВГЗ", "ОВДП");
+// 	} else if (string.includes("ОВнешГЗ")) {
+// 		return string.replace("ОВнешГЗ", "ОЗДП");
+// 	} else {
+// 		return string;
+// 	}
+// }
 
 function formatDate(dateString) {
 	const parsedDate = Date.parse(dateString);
@@ -99,12 +125,12 @@ function formatDate(dateString) {
 function markupCreator(quotesArray) {
 	const markup = quotesArray
 		.map(quote => {
-			const title = replaceBondsTitle(quote.title);
+			// const title = replaceBondsTitle(quote.title);
 			const maturity_date = formatDate(quote.maturity_date);
 			return `<li class="bonds-quote-item">
 				<div class="bonds-quote-element">
 					<span class="bonds-quote-element-header">Назва</span>
-					<p class="bonds-quote-element-text">${title}</p>
+					<p class="bonds-quote-element-text">${quote.title}</p>
 				</div>
 				<div class="bonds-quote-element">
 					<span class="bonds-quote-element-header">ISIN</span>
@@ -139,12 +165,12 @@ function markupCreator(quotesArray) {
 function markupCreatorEurobonds(quotesArray) {
 	const markup = quotesArray
 		.map(quote => {
-			const title = replaceBondsTitle(quote.title);
+			// const title = replaceBondsTitle(quote.title);
 			const maturity_date = formatDate(quote.maturity_date);
 			return `<li class="bonds-quote-item">
 				<div class="bonds-quote-element">
 					<span class="bonds-quote-element-header">Назва</span>
-					<p class="bonds-quote-element-text">${title}</p>
+					<p class="bonds-quote-element-text">${quote.title}</p>
 				</div>
 				<div class="bonds-quote-element">
 					<span class="bonds-quote-element-header">ISIN</span>
@@ -178,7 +204,7 @@ function markupCreatorEurobonds(quotesArray) {
 
 function thereIsNoQuotesMessage() {
 	const markup = `<li class="no-quotes-message">
-				<h4 class="bonds-quote-group-title">На даний момент котирувань немає</h4>
+				<h4 class="bonds-quote-group-title">${noQuotesMessage}</h4>
 			</li>`;
 	return markup;
 }

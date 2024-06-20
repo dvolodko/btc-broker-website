@@ -1,0 +1,38 @@
+<section class="pricing-section">
+	<div class="container pricing-container">
+		<h3 class="superheader">Prices</h3>
+		<h1 class="section-header pricing-header">Service Tariffs</h1>
+		<div class="pdf-viewer-header">
+			<span>BTC Broker's tariff edition effective</span>
+			<select name="pricing-date" id="pricing-date">
+				<option value="pricing-2023-09-01">from 2024-06-10</option>
+				<option value="pricing-2023-01-01">
+					from 2023-09-01 to 2024-06-09
+				</option>
+				<option value="pricing-2023-01-01">
+					from 2023-01-01 to 2023-09-01
+				</option>
+			</select>
+		</div>
+	</div>
+	<div class="pdf-viewer-section">
+		<object
+			class="pricing-pdf-main"
+			id="pdf-main"
+			data="https://btc-broker.com/upload/documents/pricing/dummy-pdf.pdf"
+			type="application/pdf"
+		>
+			<embed
+				class="pricing-pdf-fallback"
+				id="pdf-fallback"
+				src="https://btc-broker.com/upload/documents/pricing/dummy-pdf.pdf"
+			/>
+		</object>
+		<iframe
+			class="pricing-pdf-main-mobile"
+			id="pdf-main-mobile"
+			src="https://btc-broker.com/web/viewer.html?file=https%3A%2F%2Fbtc-broker.com%2Fdummy-pdf.83154990.pdf"
+			frameborder="0"
+		></iframe>
+	</div>
+</section>

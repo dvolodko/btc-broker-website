@@ -10,11 +10,17 @@ const notiflixConfig = {
 };
 const elementToCopy = document.querySelector(".banking-details-list");
 
+let notiflixMessage = "Скопійовано";
+
+if (window.location.pathname.includes("/en")) {
+	notiflixMessage = "Copied";
+}
+
 elementToCopy.addEventListener("click", e => {
 	if (e.target.className === "banking-details-item-strong-text") {
 		navigator.clipboard.writeText(e.target.innerText);
 		Notify.success(
-			`Скопійовано: ${e.target.parentElement.innerText}`,
+			`${notiflixMessage}: ${e.target.parentElement.innerText}`,
 			notiflixConfig,
 		);
 	}

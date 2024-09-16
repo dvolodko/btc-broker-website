@@ -79,38 +79,6 @@ async function getBondsQuotes(assetType) {
 	}
 }
 
-// function replaceBondsTitle(string) {
-// 	if (string.includes("Bond")) {
-// 		return string.replace("Bond", "ОВДП");
-// 	} else if (string.includes("EUROBOND")) {
-// 		return string.replace("EUROBOND", "ОЗДП");
-// 	} else if (string.includes("Военная")) {
-// 		return string.replace("Военная ОВГЗ", "ОВДП");
-// 	} else if (string.includes("Военные")) {
-// 		return string.replace("Военные ОВГЗ", "ОВДП");
-// 	} else if (string.includes("ОВГЗ")) {
-// 		return string.replace("ОВГЗ", "ОВДП");
-// 	} else if (string.includes("ОВнешГЗ")) {
-// 		return string.replace("ОВнешГЗ", "ОЗДП");
-// 	} else {
-// 		return string;
-// 	}
-// }
-
-// function replaceBondsTitle(string) {
-// 	if (string.includes("Военная")) {
-// 		return string.replace("Военная ОВГЗ", "ОВДП");
-// 	} else if (string.includes("Военные")) {
-// 		return string.replace("Военные ОВГЗ", "ОВДП");
-// 	} else if (string.includes("ОВГЗ")) {
-// 		return string.replace("ОВГЗ", "ОВДП");
-// 	} else if (string.includes("ОВнешГЗ")) {
-// 		return string.replace("ОВнешГЗ", "ОЗДП");
-// 	} else {
-// 		return string;
-// 	}
-// }
-
 function formatDate(dateString) {
 	const parsedDate = Date.parse(dateString);
 	const dateObj = new Date(parsedDate);
@@ -125,7 +93,6 @@ function formatDate(dateString) {
 function markupCreator(quotesArray) {
 	const markup = quotesArray
 		.map(quote => {
-			// const title = replaceBondsTitle(quote.title);
 			const maturity_date = formatDate(quote.maturity_date);
 			return `<li class="bonds-quote-item">
 				<div class="bonds-quote-element">
@@ -165,7 +132,6 @@ function markupCreator(quotesArray) {
 function markupCreatorEurobonds(quotesArray) {
 	const markup = quotesArray
 		.map(quote => {
-			// const title = replaceBondsTitle(quote.title);
 			const maturity_date = formatDate(quote.maturity_date);
 			return `<li class="bonds-quote-item">
 				<div class="bonds-quote-element">

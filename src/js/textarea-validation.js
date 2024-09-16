@@ -14,3 +14,25 @@ if (textarea.checkValidity()) {
 		}
 	});
 }
+
+// submit button status handler
+
+const contactUsForm = document.querySelector(".form-contact-us");
+const contactUsSubmitButton = contactUsForm.querySelector(
+	".form-submit-button",
+);
+
+contactUsForm.addEventListener("input", onInputValidation);
+
+function onInputValidation(e) {
+	const currentTarget = e.currentTarget;
+	setTimeout(() => {
+		if (currentTarget.checkValidity()) {
+			contactUsSubmitButton.removeAttribute("disabled");
+			contactUsSubmitButton.removeAttribute("aria-disabled");
+		} else {
+			contactUsSubmitButton.setAttribute("disabled", true);
+			contactUsSubmitButton.setAttribute("aria-disabled", true);
+		}
+	}, 0);
+}

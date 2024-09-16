@@ -138,16 +138,19 @@
 						minlength="4"
 						maxlength="1500"
 						required
+						pattern="[а-яА-ЯіїґєІЄҐЇa-zA-Z'`.,!?\- ]{4,1500}"
 						placeholder="Enter Your Message"
 						title="Enter Your Message"
 					></textarea>
 				</div>
 				<button
+					aria-disabled="true"
 					type="submit"
 					class="button-primary form-submit-button g-recaptcha"
 					data-sitekey="6Lf87j0pAAAAANXp3uc317YwXomuR7zOpo7VZk5k"
 					data-callback="onSubmit"
 					data-action="submit"
+					disabled
 				>
 					Submit a Question
 				</button>

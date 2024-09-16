@@ -5,3 +5,4 @@ import "./js/header-shadow-after-scroll";
 // import "./js/form-handler";
 import "./js/recaptcha";
 import "./js/language-toggler";
+import "./js/textarea-validation";

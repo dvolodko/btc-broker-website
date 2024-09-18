@@ -15,7 +15,7 @@ if (textarea.checkValidity()) {
 	});
 }
 
-// submit button status handler
+// submit button disabled status handler
 
 const contactUsForm = document.querySelector(".form-contact-us");
 const contactUsSubmitButton = contactUsForm.querySelector(

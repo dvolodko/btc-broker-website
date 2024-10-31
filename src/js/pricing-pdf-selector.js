@@ -5,7 +5,7 @@ const pdfViewerFallback = document.getElementById("pdf-fallback");
 
 pdfViewerMain.setAttribute(
 	"data",
-	"https://btc-broker.com/upload/documents/pricing/pricing-2024-07-25.pdf",
+	"https://btc-broker.com/upload/documents/pricing/pricing-2024-10-31.pdf",
 );
 
 const dateSelectorHandler = event => {

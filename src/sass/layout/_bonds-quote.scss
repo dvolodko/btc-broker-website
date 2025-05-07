@@ -68,6 +68,18 @@
 	}
 }
 
+// Нижче закоментована частина для ємейлів
+// .bonds-quote-bonds-header-list {
+// 	display: none;
+// 	@include mq(tablet-L) {
+// 		display: grid;
+// 		// grid-template-columns: repeat(7, 1fr);
+// 		grid-template-columns: 1.2fr 1.2fr 1fr 0.6fr;
+// 		margin-bottom: $M;
+// 		font-weight: 700;
+// 	}
+// }
+
 .bonds-quote-bonds-header-item {
 	@include mq(tablet-L) {
 		display: flex;
@@ -101,6 +113,26 @@
 		}
 	}
 }
+
+// Нижче закоментована частина для ємейлів
+// .bonds-quote-item {
+// 	display: flex;
+// 	flex-direction: column;
+// 	border-radius: $S;
+// 	background-color: $neutralColor0Transparency600;
+// 	box-shadow: $shadowElevationMedium;
+// 	&:not(:last-child) {
+// 		margin-bottom: $M;
+// 	}
+// 	@include mq(tablet-L) {
+// 		display: grid;
+// 		// grid-template-columns: repeat(7, 1fr);
+// 		grid-template-columns: 1.2fr 1.2fr 1fr 0.6fr;
+// 		&:not(:last-child) {
+// 			margin-bottom: $S;
+// 		}
+// 	}
+// }
 
 .bonds-quote-element {
 	display: flex;

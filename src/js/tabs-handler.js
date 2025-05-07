@@ -17,26 +17,33 @@ function switchTab(tabToActivate, activeTab) {
 			tabToActivate.classList.add("active");
 			tabsContent[0].classList.add("visible");
 			tabsContent[1].classList.remove("visible");
-			tabsContent[2].classList.remove("visible");
-			tabsContent[3].classList.remove("visible");
-
-			// if (tabsContent[3]) {
-			// 	tabsContent[3].classList.remove("visible");
-			// }
+			// На різних сторінках використовується різна кількість вкладок, тому потрібна перевірка
+			if (tabsContent[2]) {
+				tabsContent[2].classList.remove("visible");
+			}
+			if (tabsContent[3]) {
+				tabsContent[3].classList.remove("visible");
+			}
 			break;
 		case "second":
 			tabToActivate.classList.add("active");
 			tabsContent[0].classList.remove("visible");
 			tabsContent[1].classList.add("visible");
-			tabsContent[2].classList.remove("visible");
-			tabsContent[3].classList.remove("visible");
+			if (tabsContent[2]) {
+				tabsContent[2].classList.remove("visible");
+			}
+			if (tabsContent[3]) {
+				tabsContent[3].classList.remove("visible");
+			}
 			break;
 		case "third":
 			tabToActivate.classList.add("active");
 			tabsContent[0].classList.remove("visible");
 			tabsContent[1].classList.remove("visible");
 			tabsContent[2].classList.add("visible");
-			tabsContent[3].classList.remove("visible");
+			if (tabsContent[3]) {
+				tabsContent[3].classList.remove("visible");
+			}
 			break;
 		case "fourth":
 			tabToActivate.classList.add("active");

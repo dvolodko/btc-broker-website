@@ -121,36 +121,100 @@
 	background: transparent;
 	border: 0;
 	border-radius: 4px;
+	cursor: pointer;
 	@include mq(desktop) {
 		display: none;
 	}
 }
 
 .button-hamburger .line {
-	transition: y $mainTransitionDuration $mainTransitionTimingFunction
-			$mainTransitionDuration,
-		rotate $mainTransitionDuration $mainTransitionTimingFunction,
-		opacity 0ms $mainTransitionDuration;
-	transform-origin: center;
+	transform-origin: 14px 12px;
+	transform: translateX(0) translateY(0) rotate(0);
 }
 
-.button-hamburger[aria-expanded="true"] .line {
-	transition: y $mainTransitionDuration $mainTransitionTimingFunction,
-		rotate $mainTransitionDuration $mainTransitionTimingFunction
-			$mainTransitionDuration,
-		opacity 0ms $mainTransitionDuration;
+.button-hamburger .top {
+	animation: close-top-line $doubleTransitionDuration
+		$mainTransitionTimingFunction forwards;
+}
+
+.button-hamburger .middle {
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction
+		$mainTransitionDuration;
+	opacity: 1;
+}
+
+.button-hamburger .bottom {
+	animation: close-bottom-line $doubleTransitionDuration
+		$mainTransitionTimingFunction forwards;
 }
 
 .button-hamburger[aria-expanded="true"] .top {
-	y: 11;
-	rotate: 45deg;
+	animation: open-top-line $doubleTransitionDuration
+		$mainTransitionTimingFunction forwards;
 }
 
 .button-hamburger[aria-expanded="true"] .middle {
+	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction;
 	opacity: 0;
 }
 
 .button-hamburger[aria-expanded="true"] .bottom {
-	y: 11;
-	rotate: -45deg;
+	animation: open-bottom-line $doubleTransitionDuration
+		$mainTransitionTimingFunction forwards;
+}
+
+// Animation for the top line to move then rotate
+
+@keyframes open-top-line {
+	0% {
+		transform: translateY(0) rotate(0);
+	}
+	50% {
+		transform: translateY(5px) rotate(0); /* <-- Translation is done */
+	}
+	100% {
+		transform: translateX(-4px) translateY(5px) rotate(45deg); /* <-- Rotation is done */
+	}
+}
+
+// Animation for the bottom line to move then rotate
+
+@keyframes open-bottom-line {
+	0% {
+		transform: translateY(0) rotate(0);
+	}
+	50% {
+		transform: translateY(-5px) rotate(0); /* <-- Translation is done */
+	}
+	100% {
+		transform: translateX(-4px) translateY(-5px) rotate(-45deg); /* <-- Rotation is done */
+	}
+}
+
+// Animation for the top line to un-rotate then move
+
+@keyframes close-top-line {
+	0% {
+		transform: translateX(-4px) translateY(5px) rotate(45deg); /* Start as "X" */
+	}
+	50% {
+		transform: translateY(5px) rotate(0); /* Un-rotate first */
+	}
+	100% {
+		transform: translateY(0) rotate(0); /* Move back to position */
+	}
+}
+
+// Animation for the bottom line to un-rotate then move
+
+@keyframes close-bottom-line {
+	0% {
+		transform: translateX(-4px) translateY(-5px) rotate(-45deg);
+	}
+	50% {
+		transform: translateY(-5px) rotate(0);
+	}
+	100% {
+		transform: translateY(0) rotate(0);
+	}
 }

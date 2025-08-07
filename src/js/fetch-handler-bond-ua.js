@@ -1,8 +1,10 @@
+const axios = require("axios").default;
 import { Loading } from "notiflix/build/notiflix-loading-aio";
 
-const BONDS_URL = 0;
-const EUROBONDS = 1;
-const CORPORATE = 2;
+const BONDS_URL = "?asset_type=0";
+const EUROBONDS = "?asset_type=2";
+const CORPORATE = "?asset_type=3";
+let acceptLanguage = "uk";
 let noQuotesMessage = "На даний момент котирувань немає";
 
 if (window.location.pathname.includes("/en")) {
@@ -10,31 +12,13 @@ if (window.location.pathname.includes("/en")) {
 	noQuotesMessage = "At the moment, there are no quotes available";
 }
 
-async function fetchData(assetType) {
-	try {
-		const response = await fetch(
-			"https://btc-dev-portal.codejig.com/uk/api/getAssets",
-			{
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: assetType,
-			},
-		);
-
-		if (!response.ok) {
-			// Check for HTTP errors (e.g., 404, 500)
-			throw new Error(`HTTP error! status: ${response.status}`);
-		}
-
-		const data = await response.json();
-		return data;
-	} catch (error) {
-		console.error("Error fetching user data:", error);
-		return null; // Handle the error gracefully
-	}
-}
+const axiosInstant = axios.create({
+	baseURL: "https://bond.ua/landing/asset/",
+	timeout: 5000,
+	headers: {
+		"Accept-Language": acceptLanguage,
+	},
+});
 
 async function renderBondsQuotesTable() {
 	const bondsQuotesContainer = document.querySelector(".bonds-table");
@@ -53,9 +37,7 @@ async function renderBondsQuotesTable() {
 async function renderEurobondsQuotesTable() {
 	const bondsQuotesContainer = document.querySelector(".eurobonds-table");
 	const bondsQuotesHeader = document.querySelector(".eurobonds-header");
-	// Тимчасовий костиль
-	// const bondsQuotes = await getBondsQuotes(EUROBONDS);
-	const bondsQuotes = 0;
+	const bondsQuotes = await getBondsQuotes(EUROBONDS);
 	if (!bondsQuotes) {
 		const markupMessage = thereIsNoQuotesMessage();
 		bondsQuotesContainer.innerHTML = markupMessage;
@@ -69,9 +51,7 @@ async function renderEurobondsQuotesTable() {
 async function renderCorporateQuotesTable() {
 	const bondsQuotesContainer = document.querySelector(".corporate-table");
 	const bondsQuotesHeader = document.querySelector(".corporate-header");
-	// Тимчасовий костиль
-	// const bondsQuotes = await getBondsQuotes(CORPORATE);
-	const bondsQuotes = 0;
+	const bondsQuotes = await getBondsQuotes(CORPORATE);
 	if (!bondsQuotes) {
 		const markupMessage = thereIsNoQuotesMessage();
 		bondsQuotesContainer.innerHTML = markupMessage;
@@ -82,40 +62,18 @@ async function renderCorporateQuotesTable() {
 	bondsQuotesContainer.innerHTML = markup;
 }
 
-// This function for BOND.UA
-
-// async function getBondsQuotes(assetType) {
-// 	try {
-// 		Loading.dots({
-// 			svgColor: "#3757be",
-// 			backgroundColor: "#5978a399",
-// 		});
-// 		const response = await axiosInstant.get(`${assetType}`);
-// 		Loading.remove();
-// 		if (response.data.results.length === 0) {
-// 			return false;
-// 		}
-// 		return response.data.results;
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// }
-
-// This function for Cabinet
-
 async function getBondsQuotes(assetType) {
 	try {
 		Loading.dots({
 			svgColor: "#3757be",
 			backgroundColor: "#5978a399",
 		});
-		const response = await fetchData(assetType);
-		console.log(response.results);
+		const response = await axiosInstant.get(`${assetType}`);
 		Loading.remove();
-		if (response.results.length === 0) {
+		if (response.data.results.length === 0) {
 			return false;
 		}
-		return response.results;
+		return response.data.results;
 	} catch (error) {
 		console.log(error);
 	}

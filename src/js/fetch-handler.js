@@ -13,7 +13,7 @@ if (window.location.pathname.includes("/en")) {
 async function fetchData(assetType) {
 	try {
 		const response = await fetch(
-			"https://btc-dev-portal.codejig.com/uk/api/getAssets",
+			"https://trading.btc-broker.com/uk/api/getAssets",
 			{
 				method: "POST",
 				headers: {
@@ -110,7 +110,6 @@ async function getBondsQuotes(assetType) {
 			backgroundColor: "#5978a399",
 		});
 		const response = await fetchData(assetType);
-		console.log(response.results);
 		Loading.remove();
 		if (response.results.length === 0) {
 			return false;

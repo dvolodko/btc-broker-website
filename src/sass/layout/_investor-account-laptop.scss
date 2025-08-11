@@ -1,0 +1,64 @@
+.investor-account-laptop-section {
+	background-image: url("/src/images/macbook-investor.webp"),
+		url("/src/images/svg/bg-ellipse-yellow-hero-390.svg"),
+		url("/src/images/svg/bg-ellipse-blue-hero-390.svg");
+	background-repeat: no-repeat, no-repeat, no-repeat;
+	background-position: calc(50% + 192px) calc(100% + 2px),
+		calc(50% - 64px) calc(50% + 160px), calc(50% + 96px) calc(50% + 160px);
+	background-size: 616px, auto auto, 640px;
+	@include mq(tablet-S) {
+		background-image: url("/src/images/macbook-investor.webp"),
+			url("/src/images/svg/bg-shape-yellow-hero-768.svg"),
+			url("/src/images/svg/bg-ellipse-blue-hero-768.svg");
+		background-position: calc(50% + 352px) calc(100% + 2px),
+			calc(50% - 256px) calc(50% + 192px), calc(50% + 192px) calc(50% + 50px);
+		background-size: 752px, 634px, 576px;
+		padding-top: 128px;
+		margin-top: -128px;
+	}
+	@include mq(tablet-L) {
+		background-position: calc(50% + 392px) calc(100% + 2px),
+			calc(50% - 288px) calc(50% + 256px), calc(50% + 208px) calc(50% + 50px);
+		background-size: 752px, 640px, 576px;
+	}
+	@include mq(desktop) {
+		background-position: calc(50% + 416px) calc(100% + 2px),
+			calc(50% - 352px) calc(50% + 256px), calc(50% + 224px) calc(50% + 50px);
+		background-size: 816px, 640px, 576px;
+	}
+}
+
+.investor-account-laptop-container {
+	@include flex(flex, flex-start, center);
+	padding-top: $M;
+	padding-bottom: $M;
+	@include mq(tablet-S) {
+		padding-top: $L;
+		padding-bottom: $XL;
+		padding-left: 76px;
+		padding-right: 76px;
+	}
+	@include mq(tablet-L) {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+	@include mq(desktop) {
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}
+
+.investor-account-laptop-description-container {
+	@include flex(flex, center, flex-start);
+	flex-direction: column;
+	padding-bottom: 256px;
+	@include mq(tablet-S) {
+		flex-basis: calc((100% - 1 * $M) / 2);
+		padding-bottom: 0;
+	}
+}
+
+.investor-account-laptop-description-subheader {
+	margin-bottom: $L;
+	text-wrap: balance;
+}

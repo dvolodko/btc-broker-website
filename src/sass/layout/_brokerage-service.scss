@@ -62,55 +62,8 @@
 	margin-bottom: $M;
 }
 
-.buttons-app-download {
-	@include flex(flex, flex-start, center);
-	gap: $S;
+.brokerage-service-button {
 	margin-bottom: $L;
-	@include mq(tablet-S) {
-		gap: $M;
-	}
-}
-
-.brokerage-service-bond-ua-app-google-link,
-.brokerage-service-bond-ua-app-apple-link {
-	border-radius: $S;
-	background-color: $neutralColor0Transparency600;
-	box-shadow: $shadowElevationMedium;
-	transition: background-color $mainTransitionDuration
-			$mainTransitionTimingFunction,
-		box-shadow $mainTransitionDuration $mainTransitionTimingFunction;
-	transition: background-color $mainTransitionDuration
-		$mainTransitionTimingFunction;
-	&:hover,
-	&:focus {
-		background-color: $primaryColor950;
-		box-shadow: $shadowElevationLow;
-	}
-}
-
-.brokerage-service-bond-ua-app-google-link-vector-neutral950 {
-	fill: $primaryColor950;
-	stroke: $neutralColor950;
-	transition: fill $mainTransitionDuration $mainTransitionTimingFunction,
-		stroke $mainTransitionDuration $mainTransitionTimingFunction;
-	.brokerage-service-bond-ua-app-google-link:hover &,
-	.brokerage-service-bond-ua-app-google-link:focus & {
-		fill: $neutralColor0;
-		stroke: $neutralColor0;
-	}
-}
-
-.brokerage-service-bond-ua-app-google-link-vector-primary950,
-.brokerage-service-bond-ua-app-apple-link-primary950 {
-	fill: $primaryColor950;
-	transition: fill $mainTransitionDuration $mainTransitionTimingFunction;
-}
-
-.brokerage-service-bond-ua-app-google-link:hover
-	.brokerage-service-bond-ua-app-google-link-vector-primary950,
-.brokerage-service-bond-ua-app-apple-link:hover
-	.brokerage-service-bond-ua-app-apple-link-primary950 {
-	fill: $neutralColor0;
 }
 
 .tabs-list {

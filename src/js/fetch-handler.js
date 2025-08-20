@@ -6,7 +6,6 @@ const CORPORATE = 2;
 let noQuotesMessage = "На даний момент котирувань немає";
 
 if (window.location.pathname.includes("/en")) {
-	acceptLanguage = "en";
 	noQuotesMessage = "At the moment, there are no quotes available";
 }
 

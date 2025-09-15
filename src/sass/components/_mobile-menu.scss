@@ -152,6 +152,10 @@
 	margin-bottom: $XS;
 }
 
+.mobile-nav-menu-item-quotes {
+	color: #000000;
+}
+
 .mobile-menu-bottom-elements {
 	@include flex(flex, center, stretch);
 	flex-direction: column;

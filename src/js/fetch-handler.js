@@ -177,6 +177,38 @@ function markupCreator(quotesArray) {
 	return markup;
 }
 
+// Нижче закоментована частина для ємейлів
+// function markupCreator(quotesArray) {
+// 	const markup = quotesArray
+// 		.map(quote => {
+// 			const maturity_date = formatDate(quote.maturity_date);
+// 			return `<li class="bonds-quote-item">
+// 				<div class="bonds-quote-element">
+// 					<span class="bonds-quote-element-header">ISIN</span>
+// 					<p class="bonds-quote-element-text">${quote.isin}</p>
+// 				</div>
+// 				<div class="bonds-quote-element">
+// 					<span class="bonds-quote-element-header">Валюта емісії</span>
+// 					<p class="bonds-quote-element-text">${quote.currency_detail}</p>
+// 				</div>
+// 				<div class="bonds-quote-element">
+// 					<span class="bonds-quote-element-header">Дата погашення</span>
+// 					<p class="bonds-quote-element-text">${maturity_date}</p>
+// 				</div>
+// 				<div class="bonds-quote-element">
+// 					<span class="bonds-quote-element-header">Дохідність продажу</span>
+// 					<p class="bonds-quote-element-text">${quote.annual_rate}%</p>
+// 				</div>
+//         <div class="bonds-quote-element">
+// 					<span class="bonds-quote-element-header">Дохідність купівлі</span>
+// 					<p class="bonds-quote-element-text">${quote.sell_annual_rate}%</p>
+// 				</div>
+// 			</li>`;
+// 		})
+// 		.join("");
+// 	return markup;
+// }
+
 function markupCreatorEn(quotesArray) {
 	const markup = quotesArray
 		.map(quote => {
@@ -215,34 +247,6 @@ function markupCreatorEn(quotesArray) {
 		.join("");
 	return markup;
 }
-
-// Нижче закоментована частина для ємейлів
-// function markupCreator(quotesArray) {
-// 	const markup = quotesArray
-// 		.map(quote => {
-// 			const maturity_date = formatDate(quote.maturity_date);
-// 			return `<li class="bonds-quote-item">
-// 				<div class="bonds-quote-element">
-// 					<span class="bonds-quote-element-header">Назва</span>
-// 					<p class="bonds-quote-element-text">${quote.title}</p>
-// 				</div>
-// 				<div class="bonds-quote-element">
-// 					<span class="bonds-quote-element-header">ISIN</span>
-// 					<p class="bonds-quote-element-text">${quote.isin}</p>
-// 				</div>
-// 				<div class="bonds-quote-element">
-// 					<span class="bonds-quote-element-header">Дата погашення</span>
-// 					<p class="bonds-quote-element-text">${maturity_date}</p>
-// 				</div>
-// 				<div class="bonds-quote-element">
-// 					<span class="bonds-quote-element-header">Дохідність</span>
-// 					<p class="bonds-quote-element-text">${quote.annual_rate}%</p>
-// 				</div>
-// 			</li>`;
-// 		})
-// 		.join("");
-// 	return markup;
-// }
 
 function markupCreatorEurobonds(quotesArray) {
 	const markup = quotesArray

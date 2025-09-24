@@ -72,9 +72,10 @@
 // .bonds-quote-bonds-header-list {
 // 	display: none;
 // 	@include mq(tablet-L) {
+// 		max-width: 768px;
 // 		display: grid;
 // 		// grid-template-columns: repeat(7, 1fr);
-// 		grid-template-columns: 1.2fr 1.2fr 1fr 0.6fr;
+// 		grid-template-columns: 1.2fr 0.7fr 1fr 0.6fr 0.6fr;
 // 		margin-bottom: $M;
 // 		font-weight: 700;
 // 	}
@@ -126,9 +127,10 @@
 // 		margin-bottom: $M;
 // 	}
 // 	@include mq(tablet-L) {
+// 		max-width: 768px;
 // 		display: grid;
 // 		// grid-template-columns: repeat(7, 1fr);
-// 		grid-template-columns: 1.2fr 1.2fr 1fr 0.6fr;
+// 		grid-template-columns: 1.2fr 0.7fr 1fr 0.6fr 0.6fr;
 // 		&:not(:last-child) {
 // 			margin-bottom: $S;
 // 		}

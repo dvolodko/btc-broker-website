@@ -27,6 +27,9 @@ function switchTab(tabToActivate, activeTab) {
 			if (tabsContent[4]) {
 				tabsContent[4].classList.remove("visible");
 			}
+			if (tabsContent[5]) {
+				tabsContent[5].classList.remove("visible");
+			}
 			break;
 		case "second":
 			tabToActivate.classList.add("active");
@@ -41,6 +44,9 @@ function switchTab(tabToActivate, activeTab) {
 			if (tabsContent[4]) {
 				tabsContent[4].classList.remove("visible");
 			}
+			if (tabsContent[5]) {
+				tabsContent[5].classList.remove("visible");
+			}
 			break;
 		case "third":
 			tabToActivate.classList.add("active");
@@ -53,6 +59,9 @@ function switchTab(tabToActivate, activeTab) {
 			if (tabsContent[4]) {
 				tabsContent[4].classList.remove("visible");
 			}
+			if (tabsContent[5]) {
+				tabsContent[5].classList.remove("visible");
+			}
 			break;
 		case "fourth":
 			tabToActivate.classList.add("active");
@@ -63,6 +72,9 @@ function switchTab(tabToActivate, activeTab) {
 			if (tabsContent[4]) {
 				tabsContent[4].classList.remove("visible");
 			}
+			if (tabsContent[5]) {
+				tabsContent[5].classList.remove("visible");
+			}
 			break;
 		case "fifth":
 			tabToActivate.classList.add("active");
@@ -71,6 +83,18 @@ function switchTab(tabToActivate, activeTab) {
 			tabsContent[2].classList.remove("visible");
 			tabsContent[3].classList.remove("visible");
 			tabsContent[4].classList.add("visible");
+			if (tabsContent[5]) {
+				tabsContent[5].classList.remove("visible");
+			}
+			break;
+		case "sixth":
+			tabToActivate.classList.add("active");
+			tabsContent[0].classList.remove("visible");
+			tabsContent[1].classList.remove("visible");
+			tabsContent[2].classList.remove("visible");
+			tabsContent[3].classList.remove("visible");
+			tabsContent[4].classList.remove("visible");
+			tabsContent[5].classList.add("visible");
 			break;
 		default:
 			console.log("error -- default case");

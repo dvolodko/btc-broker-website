@@ -57,9 +57,7 @@ async function renderBondsQuotesTable() {
 async function renderEurobondsQuotesTable() {
 	const bondsQuotesContainer = document.querySelector(".eurobonds-table");
 	const bondsQuotesHeader = document.querySelector(".eurobonds-header");
-	// Тимчасовий костиль
-	// const bondsQuotes = await getBondsQuotes(EUROBONDS);
-	const bondsQuotes = 0;
+	const bondsQuotes = await getBondsQuotes(EUROBONDS);
 	if (!bondsQuotes) {
 		const markupMessage = thereIsNoQuotesMessage();
 		bondsQuotesContainer.innerHTML = markupMessage;
@@ -76,9 +74,10 @@ async function renderEurobondsQuotesTable() {
 async function renderCorporateQuotesTable() {
 	const bondsQuotesContainer = document.querySelector(".corporate-table");
 	const bondsQuotesHeader = document.querySelector(".corporate-header");
-	// Тимчасовий костиль
 	// const bondsQuotes = await getBondsQuotes(CORPORATE);
+	// Тимчасовий костиль
 	const bondsQuotes = 0;
+	// Тимчасовий костиль ^
 	if (!bondsQuotes) {
 		const markupMessage = thereIsNoQuotesMessage();
 		bondsQuotesContainer.innerHTML = markupMessage;

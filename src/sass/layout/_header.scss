@@ -26,7 +26,7 @@
 .navigation {
 	@include mq(desktop) {
 		@include flex(flex, space-between, center);
-		margin-right: $XL;
+		margin-right: 144px;
 	}
 }
 
@@ -81,20 +81,6 @@
 	@include mq(desktop) {
 		margin-left: 0;
 	}
-}
-
-.header-search-btn {
-	display: none;
-	@include mq(desktop) {
-		display: block;
-		margin-right: $L;
-		border: none;
-		background-color: transparent;
-	}
-}
-
-.header-search-icon {
-	stroke: $neutralColor950;
 }
 
 .header-language-select-btn {

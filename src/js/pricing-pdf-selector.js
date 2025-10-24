@@ -3,10 +3,20 @@ const pdfViewerMain = document.getElementById("pdf-main");
 const pdfViewerMobile = document.getElementById("pdf-main-mobile");
 const pdfViewerFallback = document.getElementById("pdf-fallback");
 
-pdfViewerMain.setAttribute(
-	"data",
-	"https://btc-broker.com/upload/documents/pricing/pricing-2025-10-07.pdf",
-);
+// pdfViewerMain.setAttribute(
+// 	"data",
+// 	"https://btc-broker.com/upload/documents/pricing/pricing-2025-10-07.pdf",
+// );
+
+// pdfViewerMobile.setAttribute(
+// 	"src",
+// 	`https://btc-broker.com/web/viewer.html?file=https%3A%2F%2Fbtc-broker.com%2Fupload%2Fdocuments%2Fpricing%2Fpricing-2025-10-07.pdf`,
+// );
+
+// pdfViewerFallback.setAttribute(
+// 	"src",
+// 	`https://btc-broker.com/upload/documents/pricing/pricing-2025-10-07.pdf`,
+// );
 
 const dateSelectorHandler = event => {
 	pdfViewerMain.setAttribute(

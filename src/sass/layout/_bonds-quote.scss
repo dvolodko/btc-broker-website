@@ -68,6 +68,17 @@
 	}
 }
 
+.bonds-quote-stocks-header-list {
+	display: none;
+	@include mq(tablet-L) {
+		display: grid;
+		// grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: 1fr 0.7fr 1.2fr 0.6fr 0.8fr 0.8fr;
+		margin-bottom: $M;
+		font-weight: 700;
+	}
+}
+
 // Нижче закоментована частина для ємейлів
 // .bonds-quote-bonds-header-list {
 // 	display: none;
@@ -110,6 +121,25 @@
 		display: grid;
 		// grid-template-columns: repeat(7, 1fr);
 		grid-template-columns: 1.2fr 0.7fr 1fr 0.6fr 0.8fr 0.8fr 0.6fr;
+		&:not(:last-child) {
+			margin-bottom: $S;
+		}
+	}
+}
+
+.stocks-quote-item {
+	display: flex;
+	flex-direction: column;
+	border-radius: $S;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	&:not(:last-child) {
+		margin-bottom: $M;
+	}
+	@include mq(tablet-L) {
+		display: grid;
+		// grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: 1fr 0.7fr 1.2fr 0.6fr 0.8fr 0.8fr;
 		&:not(:last-child) {
 			margin-bottom: $S;
 		}
@@ -181,6 +211,9 @@
 	margin-bottom: $M;
 	color: $systemColorError;
 	font-weight: 700;
+	&.high-margin {
+		margin-bottom: $XL;
+	}
 }
 
 .no-quotes-message {

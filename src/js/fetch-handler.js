@@ -2,7 +2,8 @@ import { Loading } from "notiflix/build/notiflix-loading-aio";
 
 const BONDS_URL = 0;
 const EUROBONDS = 1;
-const CORPORATE = 2;
+const STOCKS = 2;
+const CORPORATE = 3;
 let noQuotesMessage = "На зараз котирувань немає";
 let renderLanguage = "ua";
 
@@ -25,7 +26,6 @@ async function fetchData(assetType) {
 		);
 
 		if (!response.ok) {
-			// Check for HTTP errors (e.g., 404, 500)
 			throw new Error(`HTTP error! status: ${response.status}`);
 		}
 
@@ -33,7 +33,7 @@ async function fetchData(assetType) {
 		return data;
 	} catch (error) {
 		console.error("Error fetching user data:", error);
-		return null; // Handle the error gracefully
+		return null;
 	}
 }
 
@@ -68,6 +68,23 @@ async function renderEurobondsQuotesTable() {
 		renderLanguage === "ua"
 			? markupCreatorEurobonds(bondsQuotes)
 			: markupCreatorEurobondsEn(bondsQuotes);
+	bondsQuotesContainer.innerHTML = markup;
+}
+
+async function renderStocksQuotesTable() {
+	const bondsQuotesContainer = document.querySelector(".stocks-table");
+	const bondsQuotesHeader = document.querySelector(".stocks-header");
+	const bondsQuotes = await getBondsQuotes(STOCKS);
+	if (!bondsQuotes) {
+		const markupMessage = thereIsNoQuotesMessage();
+		bondsQuotesContainer.innerHTML = markupMessage;
+		return;
+	}
+	bondsQuotesHeader.classList.remove("hidden");
+	const markup =
+		renderLanguage === "ua"
+			? markupCreatorStocks(bondsQuotes)
+			: markupCreatorStocksEn(bondsQuotes);
 	bondsQuotesContainer.innerHTML = markup;
 }
 
@@ -325,6 +342,74 @@ function markupCreatorEurobondsEn(quotesArray) {
 	return markup;
 }
 
+function markupCreatorStocks(quotesArray) {
+	const markup = quotesArray
+		.map(quote => {
+			return `<li class="stocks-quote-item">
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Компанія</span>
+					<p class="bonds-quote-element-text">${quote.company}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Біржовий тікер</span>
+					<p class="bonds-quote-element-text">${quote.title}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">ISIN</span>
+					<p class="bonds-quote-element-text">${quote.isin}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Валюта емісії</span>
+					<p class="bonds-quote-element-text">${quote.currency_detail}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Продаж (UAH)</span>
+					<p class="bonds-quote-element-text">${quote.price}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Купівля (UAH)</span>
+					<p class="bonds-quote-element-text">${quote.sell_price}</p>
+				</div>
+			</li>`;
+		})
+		.join("");
+	return markup;
+}
+
+function markupCreatorStocksEn(quotesArray) {
+	const markup = quotesArray
+		.map(quote => {
+			return `<li class="stocks-quote-item">
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Company</span>
+					<p class="bonds-quote-element-text">${quote.company}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Symbol</span>
+					<p class="bonds-quote-element-text">${quote.title}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">ISIN</span>
+					<p class="bonds-quote-element-text">${quote.isin}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Issue Currency</span>
+					<p class="bonds-quote-element-text">${quote.currency_detail}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Sell Price (UAH)</span>
+					<p class="bonds-quote-element-text">${quote.price}</p>
+				</div>
+				<div class="bonds-quote-element">
+					<span class="bonds-quote-element-header">Buy Price (UAH)</span>
+					<p class="bonds-quote-element-text">${quote.sell_price}</p>
+				</div>
+			</li>`;
+		})
+		.join("");
+	return markup;
+}
+
 function thereIsNoQuotesMessage() {
 	const markup = `<li class="no-quotes-message">
 				<h4 class="bonds-quote-group-title">${noQuotesMessage}</h4>
@@ -334,4 +419,5 @@ function thereIsNoQuotesMessage() {
 
 renderBondsQuotesTable();
 renderEurobondsQuotesTable();
+renderStocksQuotesTable();
 renderCorporateQuotesTable();

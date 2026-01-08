@@ -171,6 +171,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 	padding: $XS $S;
 	@include mq(tablet-L) {
 		padding: $M $S;

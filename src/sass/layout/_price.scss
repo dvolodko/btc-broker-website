@@ -1,20 +1,28 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .price-section {
-	background-image: url("/src/images/svg/bg-shape-yellow-price-390.svg"),
+	background-image:
+		url("/src/images/svg/bg-shape-yellow-price-390.svg"),
 		url("/src/images/svg/bg-shape-blue-price-390.svg"),
 		url("/src/images/svg/bg-shape-yellow-price-390-secondary.svg");
 	background-repeat: no-repeat, no-repeat, no-repeat;
-	background-position: calc(50% + 56px) calc(50% - 576px),
-		calc(50% - 24px) calc(50% + 800px), calc(50% + 56px) calc(50% + 744px);
+	background-position:
+		calc(50% + 56px) calc(50% - 576px),
+		calc(50% - 24px) calc(50% + 800px),
+		calc(50% + 56px) calc(50% + 744px);
 	background-size: auto, auto, auto;
 	padding-top: 80px;
 	margin-top: -80px;
 	padding-bottom: 320px;
 	margin-bottom: -320px;
 	@include mq(tablet-S) {
-		background-image: url("/src/images/svg/bg-shape-blue-price-768.svg"),
+		background-image:
+			url("/src/images/svg/bg-shape-blue-price-768.svg"),
 			url("/src/images/svg/bg-shape-yellow-price-768-secondary.svg");
 		background-repeat: no-repeat, no-repeat;
-		background-position: calc(50% + 80px) calc(50% + 320px),
+		background-position:
+			calc(50% + 80px) calc(50% + 320px),
 			calc(50% + 232px) calc(50% + 248px);
 		background-size: auto, auto;
 		padding-top: 0;
@@ -23,11 +31,13 @@
 		margin-bottom: -160px;
 	}
 	@include mq(tablet-L) {
-		background-position: calc(50% + 304px) calc(50% + 320px),
+		background-position:
+			calc(50% + 304px) calc(50% + 320px),
 			calc(50% + 432px) calc(50% + 200px);
 	}
 	@include mq(desktop) {
-		background-position: calc(50% + 328px) calc(50% + 224px),
+		background-position:
+			calc(50% + 328px) calc(50% + 224px),
 			calc(50% + 448px) calc(50% + 160px);
 		background-size: 2220px, 2220px;
 	}

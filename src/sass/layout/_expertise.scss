@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .expertise-section {
 	background-image:
 		url("/src/images/svg/bg-shape-yellow-expertise-390.svg"),

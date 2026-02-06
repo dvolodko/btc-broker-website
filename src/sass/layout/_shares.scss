@@ -1,17 +1,24 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .shares-section {
-	background-image: url("/src/images/macbook-shares.webp"),
+	background-image:
+		url("/src/images/macbook-shares.webp"),
 		url("/src/images/svg/bg-shapes-blue-shares-390.svg");
 	background-repeat: no-repeat, no-repeat;
-	background-position: calc(0% - 3px) calc(0% + 208px),
+	background-position:
+		calc(0% - 3px) calc(0% + 208px),
 		calc(50%) calc(50% - 148px);
 	background-size: 616px, 1012px;
 	padding-top: 128px;
 	margin-top: -128px;
 	@include mq(tablet-S) {
-		background-image: url("/src/images/macbook-shares.webp"),
+		background-image:
+			url("/src/images/macbook-shares.webp"),
 			url("/src/images/svg/bg-shapes-blue-shares-768.svg");
 		background-repeat: no-repeat, no-repeat;
-		background-position: calc(50% + 440px) calc(50% - 227px),
+		background-position:
+			calc(50% + 440px) calc(50% - 227px),
 			calc(50% + 44px) calc(50% + 16px);
 		background-size: 752px, auto;
 		padding-top: 0;
@@ -20,14 +27,16 @@
 		margin-bottom: -480px;
 	}
 	@include mq(tablet-L) {
-		background-position: calc(50% + 392px) calc(50% - 227px),
+		background-position:
+			calc(50% + 392px) calc(50% - 227px),
 			calc(50% + 116px) calc(50% - 40px);
 		background-size: 752px, 1664px;
 	}
 	@include mq(desktop) {
 		background-image: url("/src/images/macbook-shares.webp");
 		background-repeat: no-repeat;
-		background-position: calc(50% + 416px) calc(50% - 14px),
+		background-position:
+			calc(50% + 416px) calc(50% - 14px),
 			calc(50% + 44px) calc(50% + 16px);
 		background-size: 816px;
 		padding-bottom: 0;

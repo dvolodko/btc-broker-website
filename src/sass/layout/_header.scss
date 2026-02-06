@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .header {
 	position: fixed;
 	z-index: 4;
@@ -48,7 +51,8 @@
 	border: none;
 	background-color: transparent;
 	text-decoration-color: transparent;
-	transition: color $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		color $mainTransitionDuration $mainTransitionTimingFunction,
 		text-decoration-color $mainTransitionDuration $mainTransitionTimingFunction;
 	&:hover,
 	&:focus {
@@ -67,7 +71,8 @@
 
 .header-nav-menu-icon {
 	stroke: $neutralColor950;
-	transition: stroke $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		stroke $mainTransitionDuration $mainTransitionTimingFunction,
 		rotate $mainTransitionDuration $mainTransitionTimingFunction;
 }
 
@@ -87,7 +92,8 @@
 	display: none;
 	padding: $XS;
 	border-radius: $XS;
-	transition: box-shadow $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		box-shadow $mainTransitionDuration $mainTransitionTimingFunction,
 		transform $mainTransitionDuration $mainTransitionTimingFunction;
 	&:hover,
 	&:focus {

@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .stocks-section {
 	padding-top: 88px;
 	background-image:

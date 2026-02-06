@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .form-group {
 	@include flex(flex, center, stretch);
 	flex-direction: column;

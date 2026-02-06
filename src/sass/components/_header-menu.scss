@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .header-menu-container-services,
 .header-menu-container-about-us {
 	position: absolute;
@@ -12,7 +15,8 @@
 	border-radius: $S;
 	transform: scaleY(0);
 	transform-origin: top;
-	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		opacity $mainTransitionDuration $mainTransitionTimingFunction,
 		transform $mainTransitionDuration $mainTransitionTimingFunction,
 		visibility $mainTransitionDuration $mainTransitionTimingFunction;
 }
@@ -86,7 +90,8 @@
 .header-menu-submenu-link {
 	color: $neutralColor950;
 	text-decoration-color: transparent;
-	transition: color $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		color $mainTransitionDuration $mainTransitionTimingFunction,
 		text-decoration-color $mainTransitionDuration $mainTransitionTimingFunction;
 	&:hover,
 	&:focus {

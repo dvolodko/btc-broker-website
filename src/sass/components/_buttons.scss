@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .button-primary {
 	display: block;
 	text-align: center;
@@ -7,8 +10,8 @@
 	box-shadow: $shadowElevationMedium;
 	border: none;
 	border-radius: $S;
-	transition: background-color $mainTransitionDuration
-			$mainTransitionTimingFunction,
+	transition:
+		background-color $mainTransitionDuration $mainTransitionTimingFunction,
 		color $mainTransitionDuration $mainTransitionTimingFunction;
 	&:hover,
 	&:focus {

@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .products-section {
 	background-image: url("/src/images/svg/bg-shape-products-390.svg");
 	background-repeat: no-repeat;
@@ -64,7 +67,8 @@
 	padding: $M 0;
 	background-color: $neutralColor0Transparency600;
 	box-shadow: $shadowElevationMedium;
-	transition: color $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		color $mainTransitionDuration $mainTransitionTimingFunction,
 		background-color $mainTransitionDuration $mainTransitionTimingFunction,
 		box-shadow $mainTransitionDuration $mainTransitionTimingFunction;
 	&:hover,
@@ -158,7 +162,8 @@
 .depositary-button-icon-accent-fill-stroke {
 	fill: $primaryColor400;
 	stroke: $primaryColor400;
-	transition: fill $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		fill $mainTransitionDuration $mainTransitionTimingFunction,
 		stroke $mainTransitionDuration $mainTransitionTimingFunction;
 }
 
@@ -225,7 +230,8 @@
 	overflow: hidden;
 	transform-origin: top left;
 	transform: translateX(-8px);
-	transition: opacity $doubleTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		opacity $doubleTransitionDuration $mainTransitionTimingFunction,
 		transform $doubleTransitionDuration $mainTransitionTimingFunction;
 	@include mq(tablet-S) {
 		max-width: 662px;

@@ -1,18 +1,26 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .faq-section {
-	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+	background-image:
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
 		url("/src/images/svg/bg-shape-blue-faq-390.svg");
 	background-repeat: no-repeat, no-repeat;
-	background-position: calc(50% + 56px) calc(50% + 304px),
+	background-position:
+		calc(50% + 56px) calc(50% + 304px),
 		calc(50% + 48px) calc(50% + 520px);
 	background-size: auto, auto;
 	@include mq(tablet-S) {
-		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+		background-image:
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
 			url("/src/images/svg/bg-shape-blue-faq-768.svg");
-		background-position: calc(50% + 224px) calc(50% + 208px),
+		background-position:
+			calc(50% + 224px) calc(50% + 208px),
 			calc(50% - 48px) calc(50% + 288px);
 	}
 	@include mq(desktop) {
-		background-position: calc(50% + 272px) calc(50% + 104px),
+		background-position:
+			calc(50% + 272px) calc(50% + 104px),
 			calc(50% - 0px) calc(50% + 192px);
 	}
 }

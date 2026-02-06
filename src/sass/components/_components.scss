@@ -1,7 +1,7 @@
-@import './container';
-@import './section';
-@import './buttons';
-@import './accordion';
-@import './forms';
-@import './mobile-menu';
-@import './header-menu';
+@use 'container';
+@use 'section';
+@use 'buttons';
+@use 'accordion';
+@use 'forms';
+@use 'mobile-menu';
+@use 'header-menu';

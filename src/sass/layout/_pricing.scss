@@ -1,19 +1,27 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .pricing-section {
 	padding-top: 88px;
-	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+	background-image:
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
 		url("/src/images/svg/bg-shape-blue-faq-390.svg");
 	background-repeat: no-repeat, no-repeat;
-	background-position: calc(50% + 64px) calc(0% - 196px),
+	background-position:
+		calc(50% + 64px) calc(0% - 196px),
 		calc(50% - 256px) calc(0% - 128px);
 	background-size: auto, auto;
 	@include mq(tablet-S) {
-		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+		background-image:
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
 			url("/src/images/svg/bg-shape-blue-faq-768.svg");
-		background-position: calc(50% + 256px) calc(0% - 720px),
+		background-position:
+			calc(50% + 256px) calc(0% - 720px),
 			calc(50% - 384px) calc(0% - 480px);
 	}
 	@include mq(desktop) {
-		background-position: calc(50% + 480px) calc(0% - 720px),
+		background-position:
+			calc(50% + 480px) calc(0% - 720px),
 			calc(50% - 384px) calc(0% - 480px);
 	}
 }

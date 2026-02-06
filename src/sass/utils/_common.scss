@@ -1,3 +1,6 @@
+@use "mixins";
+@use "vars";
+
 @import "/node_modules/modern-normalize/modern-normalize.css";
 
 // html {
@@ -9,63 +12,63 @@ body {
 	height: 100vh;
 	grid-template-rows: 1fr auto;
 	min-width: 365px;
-	color: $neutralColor600;
-	font-family: $mainFontFamily;
-	@include font(400, 1rem, 1.5rem, 0);
+	color: vars.$neutralColor600;
+	font-family: vars.$mainFontFamily;
+	@include mixins.font(400, 1rem, 1.5rem, 0);
 }
 
 .superheader {
-	font-family: $secondaryFontFamily;
-	color: $primaryColor400;
-	@include font(800, 1rem, 1.5rem, 0);
+	font-family: vars.$secondaryFontFamily;
+	color: vars.$primaryColor400;
+	@include mixins.font(800, 1rem, 1.5rem, 0);
 	text-transform: uppercase;
-	margin-bottom: $S;
+	margin-bottom: vars.$S;
 }
 
 .section-header {
-	font-family: $secondaryFontFamily;
-	color: $primaryColor950;
-	@include font(800, 1.75rem, 2rem, 0);
-	margin-bottom: $M;
-	@include mq(tablet-L) {
-		@include font(800, 2.25rem, 2.5rem, 0);
+	font-family: vars.$secondaryFontFamily;
+	color: vars.$primaryColor950;
+	@include mixins.font(800, 1.75rem, 2rem, 0);
+	margin-bottom: vars.$M;
+	@include mixins.mq(tablet-L) {
+		@include mixins.font(800, 2.25rem, 2.5rem, 0);
 	}
 }
 
 .subheader {
-	font-family: $secondaryFontFamily;
-	color: $neutralColor950;
-	@include font(400, 1.25rem, 2rem, 0);
+	font-family: vars.$secondaryFontFamily;
+	color: vars.$neutralColor950;
+	@include mixins.font(400, 1.25rem, 2rem, 0);
 }
 
 .chapter-header {
-	font-family: $secondaryFontFamily;
-	color: $primaryColor950;
-	@include font(800, 1.25rem, 2rem, 0);
-	margin-bottom: $M;
-	@include mq(tablet-L) {
-		@include font(800, 1.5rem, 2.5rem, 0);
+	font-family: vars.$secondaryFontFamily;
+	color: vars.$primaryColor950;
+	@include mixins.font(800, 1.25rem, 2rem, 0);
+	margin-bottom: vars.$M;
+	@include mixins.mq(tablet-L) {
+		@include mixins.font(800, 1.5rem, 2.5rem, 0);
 	}
 }
 
 .strong-text {
-	color: $primaryColor950;
+	color: vars.$primaryColor950;
 }
 
 .text-link {
-	color: $systemColorLink;
+	color: vars.$systemColorLink;
 	text-decoration-line: underline;
 	text-decoration-style: solid;
-	text-decoration-color: $systemColorLinkTransparency000;
+	text-decoration-color: vars.$systemColorLinkTransparency000;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 2px;
-	transition: text-decoration-color $mainTransitionDuration
-		$mainTransitionTimingFunction;
+	transition: text-decoration-color vars.$mainTransitionDuration
+		vars.$mainTransitionTimingFunction;
 	&:hover,
 	&:focus {
 		text-decoration-line: underline;
 		text-decoration-style: solid;
-		text-decoration-color: $systemColorLink;
+		text-decoration-color: vars.$systemColorLink;
 		text-decoration-thickness: 1px;
 		text-underline-offset: 2px;
 	}

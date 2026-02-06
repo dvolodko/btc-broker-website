@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 // 0 to height: auto animation
 
 .accordion-content {
@@ -79,12 +82,14 @@
 	stroke: $primaryColor700;
 	transform-origin: center;
 	rotate: 0deg;
-	transition: rotate $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		rotate $mainTransitionDuration $mainTransitionTimingFunction,
 		stroke $mainTransitionDuration $mainTransitionTimingFunction;
 }
 
 .accordion-trigger[aria-expanded="true"] .line {
-	transition: rotate $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		rotate $mainTransitionDuration $mainTransitionTimingFunction,
 		stroke $mainTransitionDuration $mainTransitionTimingFunction;
 }
 

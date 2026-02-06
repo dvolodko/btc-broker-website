@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .investor-account-laptop-section {
 	background-image:
 		url("/src/images/macbook-investor.webp"),

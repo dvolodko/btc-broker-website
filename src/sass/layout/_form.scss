@@ -1,6 +1,10 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .form-section {
 	padding-top: 88px;
-	background-image: url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
+	background-image:
+		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
 		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
 		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
 		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
@@ -8,16 +12,22 @@
 		url("/src/images/svg/bg-shape-blue-faq-390.svg"),
 		url("/src/images/svg/bg-shape-yellow-faq-390.svg"),
 		url("/src/images/svg/bg-shape-blue-faq-390.svg");
-	background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
-		no-repeat, no-repeat, no-repeat;
-	background-position: calc(50% - 0px) calc(0% + 404px),
-		calc(50% - 256px) calc(0% + 0px), calc(50% - 264px) calc(25% + 256px),
-		calc(50% - 96px) calc(25% + 0px), calc(50% + 56px) calc(50% + 304px),
-		calc(50% + 48px) calc(50% + 520px), calc(50% - 256px) calc(100% + 160px),
+	background-repeat:
+		no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+		no-repeat;
+	background-position:
+		calc(50% - 0px) calc(0% + 404px),
+		calc(50% - 256px) calc(0% + 0px),
+		calc(50% - 264px) calc(25% + 256px),
+		calc(50% - 96px) calc(25% + 0px),
+		calc(50% + 56px) calc(50% + 304px),
+		calc(50% + 48px) calc(50% + 520px),
+		calc(50% - 256px) calc(100% + 160px),
 		calc(50% + 0px) calc(100% + 0px);
 	background-size: auto, auto, auto, auto, auto, auto, auto, auto;
 	@include mq(tablet-S) {
-		background-image: url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
+		background-image:
+			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
 			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
 			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
 			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
@@ -25,17 +35,25 @@
 			url("/src/images/svg/bg-shape-blue-faq-768.svg"),
 			url("/src/images/svg/bg-shape-yellow-faq-768.svg"),
 			url("/src/images/svg/bg-shape-blue-faq-768.svg");
-		background-position: calc(50% + 64px) calc(0% + 0px),
-			calc(50% - 416px) calc(0% - 448px), calc(50% - 320px) calc(25% + 256px),
-			calc(50% - 32px) calc(25% - 128px), calc(50% + 56px) calc(50% + 304px),
-			calc(50% + 48px) calc(50% + 520px), calc(50% - 256px) calc(100% + 672px),
+		background-position:
+			calc(50% + 64px) calc(0% + 0px),
+			calc(50% - 416px) calc(0% - 448px),
+			calc(50% - 320px) calc(25% + 256px),
+			calc(50% - 32px) calc(25% - 128px),
+			calc(50% + 56px) calc(50% + 304px),
+			calc(50% + 48px) calc(50% + 520px),
+			calc(50% - 256px) calc(100% + 672px),
 			calc(50% + 0px) calc(100% + 512px);
 	}
 	@include mq(desktop) {
-		background-position: calc(50% + 64px) calc(0% + 0px),
-			calc(50% - 416px) calc(0% - 448px), calc(50% - 320px) calc(25% + 256px),
-			calc(50% - 32px) calc(25% - 128px), calc(50% + 256px) calc(50% + 304px),
-			calc(50% + 48px) calc(50% + 520px), calc(50% - 256px) calc(100% + 672px),
+		background-position:
+			calc(50% + 64px) calc(0% + 0px),
+			calc(50% - 416px) calc(0% - 448px),
+			calc(50% - 320px) calc(25% + 256px),
+			calc(50% - 32px) calc(25% - 128px),
+			calc(50% + 256px) calc(50% + 304px),
+			calc(50% + 48px) calc(50% + 520px),
+			calc(50% - 256px) calc(100% + 672px),
 			calc(50% + 0px) calc(100% + 512px);
 	}
 }

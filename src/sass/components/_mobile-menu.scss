@@ -1,3 +1,6 @@
+@use "../utils/mixins" as *;
+@use "../utils/vars" as *;
+
 .mobile-menu-container {
 	@include flex(flex, space-between, stretch);
 	flex-direction: column;
@@ -15,7 +18,8 @@
 	border-radius: $S;
 	transform: scaleY(0);
 	transform-origin: top;
-	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		opacity $mainTransitionDuration $mainTransitionTimingFunction,
 		transform $mainTransitionDuration $mainTransitionTimingFunction,
 		visibility $mainTransitionDuration $mainTransitionTimingFunction;
 }
@@ -39,7 +43,8 @@
 	visibility: visible;
 	opacity: 1;
 	pointer-events: auto;
-	transition: opacity $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		opacity $mainTransitionDuration $mainTransitionTimingFunction,
 		transform $mainTransitionDuration $mainTransitionTimingFunction,
 		visibility $mainTransitionDuration $mainTransitionTimingFunction;
 }
@@ -61,7 +66,8 @@
 	background-color: transparent;
 	transform: translateX(128px);
 	opacity: 0;
-	transition: transform $mainTransitionDuration $mainTransitionTimingFunction,
+	transition:
+		transform $mainTransitionDuration $mainTransitionTimingFunction,
 		opacity $mainTransitionDuration $mainTransitionTimingFunction;
 }
 

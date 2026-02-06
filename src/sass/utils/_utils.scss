@@ -1,5 +1,5 @@
-@import './vars';
-@import './mixins';
-@import './common';
-@import './reset';
-@import './visually-hidden';
+@use 'vars';
+@use 'mixins';
+@use 'common';
+@use 'reset';
+@use 'visually-hidden';

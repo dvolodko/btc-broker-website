@@ -1,84 +1,91 @@
 .expertise-section {
-  background-image: url('/src/images/svg/bg-shape-yellow-expertise-390.svg'),
-    url('/src/images/svg/bg-shape-blue-expertise-390.svg');
-  background-repeat: no-repeat, no-repeat;
-  background-position: calc(50% + 64px) calc(50% - 136px),
-    calc(50% + 128px) calc(50% + 8px);
-  background-size: 1984px, 1920px;
-  padding-top: 88px;
-  margin-top: -88px;
-  @include mq(tablet-S) {
-    background-image: url('/src/images/svg/bg-shape-yellow-expertise-768.svg'),
-      url('/src/images/svg/bg-shape-blue-expertise-768.svg');
-    background-position: calc(50% - 80px) calc(50%),
-      calc(50% - 16px) calc(50% + 112px);
-    background-size: 1760px, 1728px;
-    padding-top: 0;
-    margin-top: 0;
-    padding-bottom: 160px;
-    margin-bottom: -160px;
-  }
-  @include mq(tablet-L) {
-    background-image: url('/src/images/svg/bg-shape-blue-expertise-768.svg'),
-      url('/src/images/svg/bg-shape-yellow-expertise-768.svg');
-    background-position: calc(50% - 48px) calc(50% + 48px),
-      calc(50% - 120px) calc(50% - 52px);
-    background-size: 2220px, 2400px;
-    padding-top: 40px;
-    margin-top: -40px;
-    padding-bottom: 240px;
-    margin-bottom: -240px;
-  }
-  @include mq(desktop) {
-    background-position: calc(50% - 128px) calc(50% + 112px),
-      calc(50% - 296px) calc(50% - 96px);
-    background-size: 2400px, 2528px;
-    padding-top: 80px;
-    margin-top: -80px;
-  }
+	background-image:
+		url("/src/images/svg/bg-shape-yellow-expertise-390.svg"),
+		url("/src/images/svg/bg-shape-blue-expertise-390.svg");
+	background-repeat: no-repeat, no-repeat;
+	background-position:
+		calc(50% + 64px) calc(50% - 136px),
+		calc(50% + 128px) calc(50% + 8px);
+	background-size: 1984px, 1920px;
+	padding-top: 88px;
+	margin-top: -88px;
+	@include mq(tablet-S) {
+		background-image:
+			url("/src/images/svg/bg-shape-yellow-expertise-768.svg"),
+			url("/src/images/svg/bg-shape-blue-expertise-768.svg");
+		background-position:
+			calc(50% - 80px) calc(50%),
+			calc(50% - 16px) calc(50% + 112px);
+		background-size: 1760px, 1728px;
+		padding-top: 0;
+		margin-top: 0;
+		padding-bottom: 160px;
+		margin-bottom: -160px;
+	}
+	@include mq(tablet-L) {
+		background-image:
+			url("/src/images/svg/bg-shape-blue-expertise-768.svg"),
+			url("/src/images/svg/bg-shape-yellow-expertise-768.svg");
+		background-position:
+			calc(50% - 48px) calc(50% + 48px),
+			calc(50% - 120px) calc(50% - 52px);
+		background-size: 2220px, 2400px;
+		padding-top: 40px;
+		margin-top: -40px;
+		padding-bottom: 240px;
+		margin-bottom: -240px;
+	}
+	@include mq(desktop) {
+		background-position:
+			calc(50% - 128px) calc(50% + 112px),
+			calc(50% - 296px) calc(50% - 96px);
+		background-size: 2400px, 2528px;
+		padding-top: 80px;
+		margin-top: -80px;
+	}
 }
 
 .expertise-container {
-  @include flex(flex, center, center);
-  flex-direction: column;
-  gap: $L;
-  padding-top: $L;
-  padding-bottom: $L;
-  @include mq(tablet-S) {
-    flex-direction: row;
-    gap: $M;
-    align-items: flex-start;
-    padding-top: $XL;
-    padding-bottom: $XL;
-  }
-  @include mq(desktop) {
-    justify-content: flex-end;
-  }
+	@include flex(flex, center, center);
+	flex-direction: column;
+	gap: $L;
+	padding-top: $L;
+	padding-bottom: $L;
+	@include mq(tablet-S) {
+		flex-direction: row;
+		gap: $M;
+		align-items: flex-start;
+		padding-top: $XL;
+		padding-bottom: $XL;
+	}
+	@include mq(desktop) {
+		justify-content: flex-end;
+	}
 }
 
 .expertise-illustration {
-  transform: scale(1.06);
-  @include mq(tablet-S) {
-    width: 320px;
-    transform: scale(1.2) translate(-16px, 72px);
-  }
-  @include mq(tablet-L) {
-    width: 392px;
-    transform: scale(1.06) translateY(40px);
-  }
-  @include mq(desktop) {
-    width: 440px;
-    transform: scale(1.06) translateY(16px) translateX(-16px);
-  }
+	transform: scale(1.06);
+	@include mq(tablet-S) {
+		width: 320px;
+		transform: scale(1.2) translate(-16px, 72px);
+	}
+	@include mq(tablet-L) {
+		width: 392px;
+		transform: scale(1.06) translateY(40px);
+	}
+	@include mq(desktop) {
+		width: 440px;
+		transform: scale(1.06) translateY(16px) translateX(-16px);
+	}
 }
 
 .expertise-description-container {
-  @include mq(desktop) {
-    max-width: 680px;
-  }
+	@include mq(desktop) {
+		max-width: 680px;
+	}
 }
 
 .expertise-description-header {
-  margin-bottom: $L;
-  text-wrap: balance;
+	margin-bottom: $L;
+	text-wrap: balance;
 }

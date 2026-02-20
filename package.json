@@ -6,7 +6,7 @@
 	"scripts": {
 		"cleanup": "rm -r .parcel-cache dist",
 		"start": "parcel src/*.html",
-		"build": "parcel build src/*.html --public-url /btc-broker-website/"
+		"build": "parcel build src/*.html"
 	},
 	"repository": {
 		"type": "git",
@@ -16,14 +16,18 @@
 	"author": "Denys Volodko <denys.volodko.v@gmail.com>",
 	"license": "ISC",
 	"devDependencies": {
+		"@parcel/optimizer-svgo": "^2.16.4",
 		"@parcel/packager-raw-url": "^2.16.4",
 		"@parcel/transformer-sass": "^2.16.4",
 		"@parcel/transformer-webmanifest": "^2.16.4",
 		"buffer": "^6.0.3",
 		"parcel": "^2.16.4",
 		"parcel-reporter-clean-dist": "^1.0.4",
+		"parcel-reporter-static-files-copy": "^1.5.3",
+		"parcel-resolver-ignore": "^2.2.1",
 		"posthtml-expressions": "^1.11.4",
-		"posthtml-include": "^2.0.1"
+		"posthtml-include": "^2.0.1",
+		"svgo": "^3.3.2"
 	},
 	"dependencies": {
 		"axios": "^1.6.8",
@@ -31,5 +35,11 @@
 		"modern-normalize": "^2.0.0",
 		"notiflix": "^3.2.7"
 	},
+	"staticFiles": {
+		"staticPath": "static"
+	},
+	"parcelIgnore": [
+		"symbol-defs.svg"
+	],
 	"browserslist": "> 0.5%, last 2 versions, not dead"
 }

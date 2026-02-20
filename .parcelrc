@@ -2,9 +2,14 @@
 	"extends": [
 		"@parcel/config-default"
 	],
+	"resolvers": [
+		"parcel-resolver-ignore",
+		"..."
+	],
 	"reporters": [
 		"...",
-		"parcel-reporter-clean-dist"
+		"parcel-reporter-clean-dist",
+		"parcel-reporter-static-files-copy"
 	],
 	"transformers": {
 		"*.scss": [

@@ -6,7 +6,7 @@
 	"scripts": {
 		"cleanup": "rm -r .parcel-cache dist",
 		"start": "parcel src/*.html",
-		"build": "parcel build src/*.html"
+		"build": "parcel build src/*.html --public-url /btc-broker-website/"
 	},
 	"repository": {
 		"type": "git",

@@ -93,6 +93,17 @@
 	}
 }
 
+.bonds-quote-corporates-header-list {
+	display: none;
+	@include mq(tablet-L) {
+		display: grid;
+		// grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: 1.2fr 1fr 0.6fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
+		margin-bottom: $M;
+		font-weight: 700;
+	}
+}
+
 // Нижче закоментована частина для ємейлів
 // .bonds-quote-bonds-header-list {
 // 	display: none;
@@ -145,6 +156,7 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: $S;
+	overflow: hidden;
 	background-color: $neutralColor0Transparency600;
 	box-shadow: $shadowElevationMedium;
 	&:not(:last-child) {
@@ -154,6 +166,26 @@
 		display: grid;
 		// grid-template-columns: repeat(7, 1fr);
 		grid-template-columns: 1fr 0.7fr 1.2fr 0.6fr 0.8fr 0.8fr;
+		&:not(:last-child) {
+			margin-bottom: $S;
+		}
+	}
+}
+
+.corporates-quote-item {
+	display: flex;
+	flex-direction: column;
+	border-radius: $S;
+	overflow: hidden;
+	background-color: $neutralColor0Transparency600;
+	box-shadow: $shadowElevationMedium;
+	&:not(:last-child) {
+		margin-bottom: $M;
+	}
+	@include mq(tablet-L) {
+		display: grid;
+		// grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: 1.2fr 1fr 0.6fr 0.8fr 0.8fr 0.8fr 0.8fr 0.8fr;
 		&:not(:last-child) {
 			margin-bottom: $S;
 		}
